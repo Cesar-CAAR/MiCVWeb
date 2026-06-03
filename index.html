@@ -48,19 +48,37 @@
 
                 </div>
 
-                <!-- BOTÓN TEMA -->
+                <!-- ACCIONES -->
 
-                <button id="themeToggle" class="theme-btn">
+<div class="action-buttons">
 
-                    <span id="themeIcon">
-                        🌙
-                    </span>
+    <!-- DESCARGAR PDF -->
 
-                    <span id="themeText">
-                        Modo Oscuro
-                    </span>
+    <button
+        id="downloadPdfBtn"
+        class="pdf-btn">
 
-                </button>
+        📄 Descargar PDF
+
+    </button>
+
+    <!-- CAMBIAR TEMA -->
+
+    <button
+        id="themeToggle"
+        class="theme-btn">
+
+        <span id="themeIcon">
+            🌙
+        </span>
+
+        <span id="themeText">
+            Modo Oscuro
+        </span>
+
+    </button>
+
+</div>
 
             </div>
 
@@ -493,8 +511,11 @@
 
         </footer>
     </div>
-    <script src="config.js"></script>
-    <script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="config.js"></script>
+
+<script src="script.js"></script>
 </body>
 
 </html>

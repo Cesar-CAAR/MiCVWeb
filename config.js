@@ -1,116 +1,73 @@
 /**
  * ==========================================
- * CONFIGURACIÓN GLOBAL DEL PROYECTO
- * ==========================================
- * Proyecto: CV Profesional Web
- * Autor: César Andrés Álvarez Romero
- * Versión: 1.1.0
- * Última actualización: Junio 2026
+ * CONFIGURACIÓN GENERAL DEL CV
  * ==========================================
  */
 
-const APP_CONFIG = {
+window.APP_CONFIG = {
 
-    // ======================================
-    // INFORMACIÓN GENERAL
-    // ======================================
+    // Información personal
 
-    projectName: "CV Profesional Web",
+    nombre: "César Andres Alvarez Romero",
 
-    author: "César Andres Alvarez Romero",
+    profesion: "Full Stack Developer",
 
-    version: "1.1.0",
+    ubicacion: "Sonora, México",
 
-    releaseDate: "2026-06-02",
-
-    // ======================================
-    // CONTACTO
-    // ======================================
+    // Contacto
 
     email: "cesar.andres5242@gmail.com",
 
     github: "https://github.com/Cesar-CAAR",
 
-    // ======================================
-    // REDES (POR SI LAS AGREGAS DESPUÉS)
-    // ======================================
+    // Versionamiento
 
-    linkedin: "",
+    version: "1.2.0",
 
-    portfolio: "",
+    // Información académica
 
-    // ======================================
-    // EDUCACIÓN
-    // ======================================
-
-    university:
+    universidad:
         "Universidad Tecnológica del Sur de Sonora",
 
-    degree:
-        "Universidad Tecnológica del Sur de Sonora",
+    carrera:
+        "Ingeniería en Desarrollo y Gestión de Software",
 
-    // ======================================
-    // TECNOLOGÍAS PRINCIPALES
-    // ======================================
+    // Tecnologías principales
 
-    technologies: [
+    tecnologias: [
 
         "Angular",
-        "TypeScript",
-        "JavaScript",
+
         ".NET",
+
         "ASP.NET Core",
+
         "C#",
+
         ".NET MAUI",
+
         "PostgreSQL",
+
         "SQL Server",
+
         "Git",
+
         "GitHub",
-        "Ubuntu Server",
-        "Arduino",
-        "ESP8266"
+
+        "Ubuntu Server"
 
     ],
 
-    // ======================================
-    // PROYECTOS DESTACADOS
-    // ======================================
+    // Proyecto principal
 
-    featuredProjects: [
+    proyectoPrincipal: {
 
-        {
-            name: "Arcano Pizza",
-            category: "web"
-        },
+        nombre:
+            "Arcano Pizza",
 
-        {
-            name: "Sistema de Administración de Usuarios",
-            category: "web"
-        },
+        descripcion:
+            "Sistema Integral de Gestión Web desarrollado con Angular y .NET bajo arquitectura cliente-servidor desacoplada."
 
-        {
-            name: "API + MAUI",
-            category: "web"
-        },
-
-        {
-            name: "ESP8266 IoT",
-            category: "iot"
-        }
-
-    ]
+    }
 
 };
-
-// ==========================================
-// LOG DE ARRANQUE
-// ==========================================
-
-console.log(
-    `%c${APP_CONFIG.projectName} v${APP_CONFIG.version}`,
-    "color:#4f46e5;font-size:14px;font-weight:bold;"
-);
-
-console.log(
-    `Autor: ${APP_CONFIG.author}`
-);

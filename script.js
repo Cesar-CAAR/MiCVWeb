@@ -1,20 +1,6 @@
-// ======================================
-// CONFIGURACIÓN GENERAL
-// ======================================
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    inicializarVersion();
-    inicializarTema();
-    inicializarFiltros();
-    inicializarAnimaciones();
-    inicializarContacto();
-
-});
-
-// ======================================
-// VERSIONAMIENTO
-// ======================================
+/* ==========================
+   VERSION
+========================== */
 
 function inicializarVersion() {
 
@@ -23,7 +9,7 @@ function inicializarVersion() {
 
     if (
         versionElement &&
-        typeof APP_CONFIG !== "undefined"
+        window.APP_CONFIG
     ) {
 
         versionElement.textContent =
@@ -33,25 +19,69 @@ function inicializarVersion() {
 
 }
 
-// ======================================
-// MODO OSCURO / CLARO
-// ======================================
+/* ==========================
+   CONTACTO
+========================== */
+
+function inicializarContacto() {
+
+    const emailLink =
+        document.getElementById("emailLink");
+
+    const githubLink =
+        document.getElementById("githubLink");
+
+    if (!window.APP_CONFIG) return;
+
+    if (emailLink) {
+
+        emailLink.textContent =
+            APP_CONFIG.email;
+
+        emailLink.href =
+            `mailto:${APP_CONFIG.email}`;
+
+    }
+
+    if (githubLink) {
+
+        githubLink.textContent =
+            "Cesar-CAAR";
+
+        githubLink.href =
+            APP_CONFIG.github;
+
+    }
+
+}
+
+/* ==========================
+   TEMA
+========================== */
 
 function inicializarTema() {
 
     const themeToggle =
-        document.getElementById("themeToggle");
+        document.getElementById(
+            "themeToggle"
+        );
 
     const themeIcon =
-        document.getElementById("themeIcon");
+        document.getElementById(
+            "themeIcon"
+        );
 
     const themeText =
-        document.getElementById("themeText");
+        document.getElementById(
+            "themeText"
+        );
 
-    // Recuperar tema guardado
+    if (!themeToggle) return;
 
     const temaGuardado =
-        localStorage.getItem("theme");
+        localStorage.getItem(
+            "theme"
+        );
 
     if (temaGuardado === "dark") {
 
@@ -60,91 +90,62 @@ function inicializarTema() {
             "dark"
         );
 
-        actualizarBotonTema(
-            themeIcon,
-            themeText,
-            true
-        );
+        themeIcon.textContent = "☀️";
+        themeText.textContent = "Modo Claro";
+
     }
 
-    if (!themeToggle) return;
+    themeToggle.addEventListener(
+        "click",
+        () => {
 
-    themeToggle.addEventListener("click", () => {
+            const currentTheme =
+                document.documentElement.getAttribute(
+                    "data-theme"
+                );
 
-        const temaActual =
-            document.documentElement.getAttribute(
-                "data-theme"
-            );
+            if (currentTheme === "dark") {
 
-        const modoOscuro =
-            temaActual === "dark";
+                document.documentElement.removeAttribute(
+                    "data-theme"
+                );
 
-        if (modoOscuro) {
+                localStorage.setItem(
+                    "theme",
+                    "light"
+                );
 
-            document.documentElement.removeAttribute(
-                "data-theme"
-            );
+                themeIcon.textContent = "🌙";
+                themeText.textContent =
+                    "Modo Oscuro";
 
-            localStorage.setItem(
-                "theme",
-                "light"
-            );
+            } else {
 
-            actualizarBotonTema(
-                themeIcon,
-                themeText,
-                false
-            );
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    "dark"
+                );
 
-        } else {
+                localStorage.setItem(
+                    "theme",
+                    "dark"
+                );
 
-            document.documentElement.setAttribute(
-                "data-theme",
-                "dark"
-            );
+                themeIcon.textContent = "☀️";
+                themeText.textContent =
+                    "Modo Claro";
 
-            localStorage.setItem(
-                "theme",
-                "dark"
-            );
-
-            actualizarBotonTema(
-                themeIcon,
-                themeText,
-                true
-            );
+            }
 
         }
 
-    });
+    );
 
 }
 
-function actualizarBotonTema(
-    icono,
-    texto,
-    modoOscuro
-) {
-
-    if (!icono || !texto) return;
-
-    if (modoOscuro) {
-
-        icono.textContent = "☀️";
-        texto.textContent = "Modo Claro";
-
-    } else {
-
-        icono.textContent = "🌙";
-        texto.textContent = "Modo Oscuro";
-
-    }
-
-}
-
-// ======================================
-// FILTRO DE PROYECTOS
-// ======================================
+/* ==========================
+   FILTROS
+========================== */
 
 function inicializarFiltros() {
 
@@ -158,59 +159,53 @@ function inicializarFiltros() {
             ".project-card"
         );
 
-    botones.forEach((boton) => {
+    botones.forEach(
+        boton => {
 
-        boton.addEventListener("click", () => {
+            boton.addEventListener(
+                "click",
+                () => {
 
-            botones.forEach(btn =>
-                btn.classList.remove(
-                    "active"
-                )
-            );
+                    botones.forEach(
+                        btn =>
+                            btn.classList.remove(
+                                "active"
+                            )
+                    );
 
-            boton.classList.add(
-                "active"
-            );
+                    boton.classList.add(
+                        "active"
+                    );
 
-            const categoria =
-                boton.dataset.filter;
+                    const categoria =
+                        boton.dataset.filter;
 
-            proyectos.forEach(
-                (proyecto) => {
+                    proyectos.forEach(
+                        proyecto => {
 
-                    const categoriaProyecto =
-                        proyecto.dataset.category;
+                            const mostrar =
+                                categoria === "all" ||
+                                proyecto.dataset.category === categoria;
 
-                    const mostrar =
-                        categoria === "all" ||
-                        categoriaProyecto === categoria;
+                            proyecto.classList.toggle(
+                                "hidden",
+                                !mostrar
+                            );
 
-                    if (mostrar) {
-
-                        proyecto.classList.remove(
-                            "hidden"
-                        );
-
-                    } else {
-
-                        proyecto.classList.add(
-                            "hidden"
-                        );
-
-                    }
+                        }
+                    );
 
                 }
             );
 
-        });
-
-    });
+        }
+    );
 
 }
 
-// ======================================
-// ANIMACIONES REVEAL
-// ======================================
+/* ==========================
+   REVEAL
+========================== */
 
 function inicializarAnimaciones() {
 
@@ -219,15 +214,13 @@ function inicializarAnimaciones() {
             ".reveal"
         );
 
-    if (!elementos.length) return;
-
     const observer =
         new IntersectionObserver(
 
-            (entries) => {
+            entries => {
 
                 entries.forEach(
-                    (entry) => {
+                    entry => {
 
                         if (
                             entry.isIntersecting
@@ -251,106 +244,116 @@ function inicializarAnimaciones() {
         );
 
     elementos.forEach(
-        (elemento) => {
-
+        elemento =>
             observer.observe(
                 elemento
-            );
-
-        }
+            )
     );
 
 }
 
-// ======================================
-// EFECTO ESCRITURA (OPCIONAL)
-// ======================================
+/* ==========================
+   PDF
+========================== */
 
-function efectoEscritura(
-    elementoId,
-    texto,
-    velocidad = 80
-) {
+async function descargarPDF() {
 
-    const elemento =
+    const { jsPDF } =
+        window.jspdf;
+
+    const pdf =
+        new jsPDF();
+
+    let y = 20;
+
+    pdf.setFontSize(22);
+
+    pdf.text(
+        APP_CONFIG.nombre,
+        20,
+        y
+    );
+
+    y += 10;
+
+    pdf.setFontSize(14);
+
+    pdf.text(
+        APP_CONFIG.profesion,
+        20,
+        y
+    );
+
+    y += 15;
+
+    pdf.setFontSize(11);
+
+    pdf.text(
+        `Email: ${APP_CONFIG.email}`,
+        20,
+        y
+    );
+
+    y += 8;
+
+    pdf.text(
+        `GitHub: ${APP_CONFIG.github}`,
+        20,
+        y
+    );
+
+    y += 15;
+
+    pdf.text(
+        "Angular, .NET, ASP.NET Core, MAUI",
+        20,
+        y
+    );
+
+    y += 8;
+
+    pdf.text(
+        "PostgreSQL, SQL Server",
+        20,
+        y
+    );
+
+    pdf.save(
+        "CV_Cesar_Andres_Alvarez_Romero.pdf"
+    );
+
+}
+
+function inicializarPDF() {
+
+    const boton =
         document.getElementById(
-            elementoId
+            "downloadPdfBtn"
         );
 
-    if (!elemento) return;
+    if (!boton) return;
 
-    elemento.textContent = "";
-
-    let indice = 0;
-
-    function escribir() {
-
-        if (indice < texto.length) {
-
-            elemento.textContent +=
-                texto.charAt(indice);
-
-            indice++;
-
-            setTimeout(
-                escribir,
-                velocidad
-            );
-
-        }
-
-    }
-
-    escribir();
+    boton.addEventListener(
+        "click",
+        descargarPDF
+    );
 
 }
 
+/* ==========================
+   INICIO
+========================== */
 
-function inicializarContacto() {
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
-    const emailLink =
-        document.getElementById(
-            "emailLink"
-        );
-
-    const githubLink =
-        document.getElementById(
-            "githubLink"
-        );
-
-    if (
-        typeof APP_CONFIG === "undefined"
-    ) {
-        return;
-    }
-
-    if (emailLink) {
-
-        emailLink.textContent =
-            APP_CONFIG.email;
-
-        emailLink.href =
-            `mailto:${APP_CONFIG.email}`;
+        inicializarVersion();
+        inicializarContacto();
+        inicializarTema();
+        inicializarFiltros();
+        inicializarAnimaciones();
+        inicializarPDF();
 
     }
-
-    if (githubLink) {
-
-        githubLink.textContent =
-            APP_CONFIG.github
-                .replace("https://", "");
-
-        githubLink.href =
-            APP_CONFIG.github;
-
-    }
-
-}
-// ======================================
-// EJEMPLO DE USO
-// ======================================
-
-// efectoEscritura(
-//     "nombre",
-//     "César Andrés Álvarez Romero"
-// );
+);
