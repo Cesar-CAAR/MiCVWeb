@@ -1,6 +1,6 @@
-/* =======================================
+/* ==========================================
    VARIABLES
-======================================= */
+========================================== */
 
 :root {
 
@@ -20,14 +20,14 @@
     --badge-bg: #eef2ff;
 
     --shadow:
-        0 10px 25px rgba(0,0,0,.08);
+        0 10px 25px rgba(0, 0, 0, .08);
 
-    --radius: 16px;
+    --radius: 18px;
 }
 
-/* =======================================
-   DARK MODE
-======================================= */
+/* ==========================================
+   MODO OSCURO
+========================================== */
 
 [data-theme="dark"] {
 
@@ -47,12 +47,12 @@
     --badge-bg: #334155;
 
     --shadow:
-        0 10px 25px rgba(0,0,0,.30);
+        0 15px 35px rgba(0, 0, 0, .35);
 }
 
-/* =======================================
+/* ==========================================
    RESET
-======================================= */
+========================================== */
 
 * {
     margin: 0;
@@ -61,6 +61,7 @@
 }
 
 html {
+
     scroll-behavior: smooth;
 }
 
@@ -77,21 +78,20 @@ body {
 
     color: var(--text);
 
-    line-height: 1.7;
-
     transition:
         background .3s ease,
         color .3s ease;
+
+    line-height: 1.7;
 }
 
-/* =======================================
-   CONTAINER
-======================================= */
+/* ==========================================
+   CONTENEDOR
+========================================== */
 
 .container {
 
     width: 95%;
-
     max-width: 1400px;
 
     margin: 0 auto;
@@ -99,9 +99,9 @@ body {
     padding: 25px;
 }
 
-/* =======================================
+/* ==========================================
    HEADER
-======================================= */
+========================================== */
 
 .header-card {
 
@@ -122,13 +122,18 @@ body {
 
     display: flex;
 
-    justify-content: space-between;
-
     align-items: center;
 
-    gap: 20px;
+    justify-content: space-between;
+
+    gap: 25px;
 
     flex-wrap: wrap;
+}
+
+.profile-info {
+
+    flex: 1;
 }
 
 .header-content h1 {
@@ -142,9 +147,7 @@ body {
 
     color: var(--primary);
 
-    font-weight: 600;
-
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .header-description {
@@ -152,9 +155,44 @@ body {
     color: var(--text-secondary);
 }
 
-/* =======================================
-   THEME BUTTON
-======================================= */
+/* ==========================================
+   FOTO PERFIL
+========================================== */
+
+.profile-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.profile-image {
+
+    width: 160px;
+    height: 160px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid var(--primary);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, .15);
+
+    transition: .3s;
+}
+
+.profile-image:hover {
+
+    transform: scale(1.05);
+}
+
+/* ==========================================
+   BOTON TEMA
+========================================== */
 
 .theme-btn {
 
@@ -170,8 +208,6 @@ body {
 
     cursor: pointer;
 
-    font-size: .95rem;
-
     font-weight: 600;
 
     transition: .3s;
@@ -184,9 +220,9 @@ body {
     transform: translateY(-2px);
 }
 
-/* =======================================
+/* ==========================================
    LAYOUT
-======================================= */
+========================================== */
 
 .layout {
 
@@ -199,10 +235,6 @@ body {
     gap: 25px;
 }
 
-/* =======================================
-   SIDEBAR
-======================================= */
-
 aside {
 
     position: sticky;
@@ -212,9 +244,9 @@ aside {
     align-self: start;
 }
 
-/* =======================================
+/* ==========================================
    CARDS
-======================================= */
+========================================== */
 
 .card {
 
@@ -237,30 +269,27 @@ aside {
 
 .card:hover {
 
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 15px 35px rgba(0,0,0,.12);
+    transform: translateY(-5px);
 }
 
-/* =======================================
-   SECTION TITLES
-======================================= */
+/* ==========================================
+   TITULOS
+========================================== */
 
 .section-title {
 
     color: var(--accent);
 
-    margin-bottom: 20px;
+    font-size: 1.4rem;
 
-    font-size: 1.3rem;
+    margin-bottom: 20px;
 
     font-weight: 700;
 }
 
-/* =======================================
-   INFO LIST
-======================================= */
+/* ==========================================
+   LISTAS
+========================================== */
 
 .info-list {
 
@@ -269,14 +298,26 @@ aside {
 
 .info-list li {
 
-    margin-bottom: 12px;
+    margin-bottom: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
 
     color: var(--text-secondary);
 }
 
-/* =======================================
+.info-list img {
+
+    width: 22px;
+    height: 22px;
+}
+
+/* ==========================================
    SKILLS
-======================================= */
+========================================== */
 
 .skill-group {
 
@@ -286,8 +327,6 @@ aside {
 .skill-group h4 {
 
     margin-bottom: 10px;
-
-    color: var(--text);
 }
 
 .badge-container {
@@ -309,8 +348,6 @@ aside {
 
     font-size: .85rem;
 
-    font-weight: 500;
-
     transition: .3s;
 }
 
@@ -319,62 +356,74 @@ aside {
     transform: scale(1.05);
 }
 
-/* =======================================
+/* ==========================================
    TIMELINE
-======================================= */
+========================================== */
 
 .timeline {
 
     border-left:
         3px solid var(--primary);
 
-    padding-left: 20px;
+    padding-left: 25px;
 }
 
 .timeline-item {
 
-    margin-bottom: 30px;
-
     position: relative;
+
+    margin-bottom: 35px;
 }
 
 .timeline-item::before {
 
     content: "";
 
-    width: 14px;
-    height: 14px;
+    position: absolute;
 
-    background: var(--primary);
+    width: 15px;
+    height: 15px;
 
     border-radius: 50%;
 
-    position: absolute;
+    background: var(--primary);
 
-    left: -28px;
+    left: -34px;
 
     top: 5px;
 }
 
 .timeline-item h4 {
 
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .timeline-date {
 
     display: block;
 
-    color: var(--text-secondary);
-
     margin-bottom: 10px;
+
+    color: var(--text-secondary);
 
     font-size: .9rem;
 }
 
-/* =======================================
-   PROJECT FILTER
-======================================= */
+.timeline-item ul {
+
+    margin-top: 10px;
+
+    padding-left: 20px;
+}
+
+.timeline-item li {
+
+    margin-bottom: 8px;
+}
+
+/* ==========================================
+   FILTROS
+========================================== */
 
 .filter-container {
 
@@ -392,8 +441,6 @@ aside {
     border: none;
 
     background: var(--badge-bg);
-
-    color: var(--text);
 
     padding: 10px 16px;
 
@@ -416,46 +463,43 @@ aside {
     color: white;
 }
 
-/* =======================================
-   PROJECTS GRID
-======================================= */
+/* ==========================================
+   PROYECTOS
+========================================== */
 
 .projects-grid {
 
     display: grid;
 
     grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(250px, 1fr)
-        );
+        repeat(auto-fit, minmax(250px, 1fr));
 
     gap: 20px;
 }
 
 .project-card {
 
-    background: var(--card);
-
     border: 1px solid var(--border);
 
-    border-radius: 12px;
+    border-radius: 14px;
 
     padding: 20px;
+
+    background: var(--card);
 
     transition: .3s;
 }
 
 .project-card:hover {
 
-    transform: translateY(-5px);
+    transform: translateY(-6px);
 }
 
 .project-card h4 {
 
-    margin-bottom: 10px;
-
     color: var(--primary);
+
+    margin-bottom: 10px;
 }
 
 .project-card p {
@@ -468,22 +512,22 @@ aside {
     display: none;
 }
 
-/* =======================================
+/* ==========================================
    FOOTER
-======================================= */
+========================================== */
 
 .footer {
 
     text-align: center;
 
-    padding: 20px;
+    padding: 30px;
 
     color: var(--text-secondary);
 }
 
-/* =======================================
+/* ==========================================
    LINKS
-======================================= */
+========================================== */
 
 a {
 
@@ -497,9 +541,9 @@ a:hover {
     text-decoration: underline;
 }
 
-/* =======================================
-   REVEAL ANIMATION
-======================================= */
+/* ==========================================
+   REVEAL
+========================================== */
 
 .reveal {
 
@@ -519,9 +563,30 @@ a:hover {
     transform: translateY(0);
 }
 
-/* =======================================
-   RESPONSIVE
-======================================= */
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar {
+
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: var(--primary);
+
+    border-radius: 10px;
+}
+
+/* ==========================================
+   RESPONSIVE TABLET
+========================================== */
 
 @media (max-width: 992px) {
 
@@ -534,22 +599,26 @@ a:hover {
 
         position: static;
     }
+
 }
 
+/* ==========================================
+   RESPONSIVE MOVIL
+========================================== */
+
 @media (max-width: 768px) {
-
-    .container {
-
-        width: 100%;
-
-        padding: 15px;
-    }
 
     .header-content {
 
         flex-direction: column;
 
-        align-items: flex-start;
+        text-align: center;
+    }
+
+    .profile-image {
+
+        width: 130px;
+        height: 130px;
     }
 
     .header-content h1 {
@@ -561,13 +630,21 @@ a:hover {
 
         grid-template-columns: 1fr;
     }
+
+    .theme-btn {
+
+        width: 100%;
+    }
+
 }
 
 @media (max-width: 480px) {
 
-    .header-content h1 {
+    .container {
 
-        font-size: 1.7rem;
+        width: 100%;
+
+        padding: 15px;
     }
 
     .card {
@@ -575,8 +652,9 @@ a:hover {
         padding: 18px;
     }
 
-    .theme-btn {
+    .header-content h1 {
 
-        width: 100%;
+        font-size: 1.6rem;
     }
+
 }

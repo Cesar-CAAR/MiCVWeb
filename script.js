@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     inicializarTema();
     inicializarFiltros();
     inicializarAnimaciones();
+    inicializarContacto();
 
 });
 
@@ -304,6 +305,47 @@ function efectoEscritura(
 
 }
 
+
+function inicializarContacto() {
+
+    const emailLink =
+        document.getElementById(
+            "emailLink"
+        );
+
+    const githubLink =
+        document.getElementById(
+            "githubLink"
+        );
+
+    if (
+        typeof APP_CONFIG === "undefined"
+    ) {
+        return;
+    }
+
+    if (emailLink) {
+
+        emailLink.textContent =
+            APP_CONFIG.email;
+
+        emailLink.href =
+            `mailto:${APP_CONFIG.email}`;
+
+    }
+
+    if (githubLink) {
+
+        githubLink.textContent =
+            APP_CONFIG.github
+                .replace("https://", "");
+
+        githubLink.href =
+            APP_CONFIG.github;
+
+    }
+
+}
 // ======================================
 // EJEMPLO DE USO
 // ======================================
