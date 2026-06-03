@@ -4,134 +4,487 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>César Andrés | Portfolio</title>
+
+    <title>César Andrés Álvarez Romero | Portfolio Profesional</title>
 
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <header class="hero">
+    <div class="container">
 
-        <div class="hero-content">
+        <!-- ========================= -->
+        <!-- HEADER -->
+        <!-- ========================= -->
 
-            <img src="assets/img/perfil.jpg" alt="Foto de perfil">
+        <header class="header-card">
 
-            <h1 id="typing"></h1>
+            <div class="header-content">
 
-            <h2>
-                Full Stack Developer
-            </h2>
+                <div>
+
+                    <h1>
+                        César Andrés Álvarez Romero
+                    </h1>
+
+                    <h2 class="subtitle">
+                        Full Stack Developer • Mobile Developer • Scrum Master
+                    </h2>
+
+                    <p class="header-description">
+                        Angular • .NET • ASP.NET Core • MAUI • PostgreSQL • SQL Server
+                    </p>
+
+                </div>
+
+                <button
+                    id="themeToggle"
+                    class="theme-btn">
+
+                    <span id="themeIcon">🌙</span>
+                    <span id="themeText">Modo Oscuro</span>
+
+                </button>
+
+            </div>
+
+        </header>
+
+        <!-- ========================= -->
+        <!-- LAYOUT -->
+        <!-- ========================= -->
+
+        <div class="layout">
+
+            <!-- ========================= -->
+            <!-- SIDEBAR -->
+            <!-- ========================= -->
+
+            <aside>
+
+                <section class="card reveal">
+
+                    <h3 class="section-title">
+                        Información
+                    </h3>
+
+                    <ul class="info-list">
+
+                        <li>
+                            📍 Sonora, México
+                        </li>
+
+                        <li>
+                            🎓 Desarrollo de Software Multiplataforma
+                        </li>
+
+                        <li>
+                            🌎 Inglés Técnico
+                        </li>
+
+                    </ul>
+
+                </section>
+
+                <!-- HABILIDADES -->
+
+                <section class="card reveal">
+
+                    <h3 class="section-title">
+                        Habilidades
+                    </h3>
+
+                    <!-- FRONTEND -->
+
+                    <div class="skill-group">
+
+                        <h4>Frontend</h4>
+
+                        <div class="badge-container">
+
+                            <span class="badge">Angular</span>
+                            <span class="badge">TypeScript</span>
+                            <span class="badge">JavaScript</span>
+                            <span class="badge">HTML5</span>
+                            <span class="badge">CSS3</span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- BACKEND -->
+
+                    <div class="skill-group">
+
+                        <h4>Backend</h4>
+
+                        <div class="badge-container">
+
+                            <span class="badge">.NET</span>
+                            <span class="badge">ASP.NET Core</span>
+                            <span class="badge">C#</span>
+                            <span class="badge">REST API</span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- MOBILE -->
+
+                    <div class="skill-group">
+
+                        <h4>Mobile</h4>
+
+                        <div class="badge-container">
+
+                            <span class="badge">.NET MAUI</span>
+                            <span class="badge">Android</span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- BASES DE DATOS -->
+
+                    <div class="skill-group">
+
+                        <h4>Bases de Datos</h4>
+
+                        <div class="badge-container">
+
+                            <span class="badge">PostgreSQL</span>
+                            <span class="badge">SQL Server</span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- DEVOPS -->
+
+                    <div class="skill-group">
+
+                        <h4>DevOps y Linux</h4>
+
+                        <div class="badge-container">
+
+                            <span class="badge">Ubuntu Server</span>
+                            <span class="badge">SSH</span>
+                            <span class="badge">Git</span>
+                            <span class="badge">GitHub</span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- GESTION -->
+
+                    <div class="skill-group">
+
+                        <h4>Gestión</h4>
+
+                        <div class="badge-container">
+
+                            <span class="badge">Scrum</span>
+                            <span class="badge">Jira</span>
+                            <span class="badge">Moqups</span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- IOT -->
+
+                    <div class="skill-group">
+
+                        <h4>IoT</h4>
+
+                        <div class="badge-container">
+
+                            <span class="badge">Arduino</span>
+                            <span class="badge">ESP8266</span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </aside>
+
+            <!-- ========================= -->
+            <!-- CONTENIDO PRINCIPAL -->
+            <!-- ========================= -->
+
+            <main>
+
+                <!-- PERFIL -->
+
+                <section class="card reveal">
+
+                    <h3 class="section-title">
+                        Perfil Profesional
+                    </h3>
+
+                    <p>
+                        Desarrollador Full Stack con experiencia en el desarrollo
+                        de aplicaciones web, móviles e integración de soluciones IoT.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Especializado en Angular, .NET, ASP.NET Core, C#,
+                        MAUI, PostgreSQL y SQL Server.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Experiencia en metodologías ágiles Scrum,
+                        liderazgo técnico, administración de servidores Linux
+                        y análisis de datos.
+                    </p>
+
+                </section>
+
+                <!-- EXPERIENCIA -->
+
+                <section class="card reveal">
+
+                    <h3 class="section-title">
+                        Experiencia
+                    </h3>
+
+                    <div class="timeline">
+
+                        <div class="timeline-item">
+
+                            <h4>
+                                Scrum Master y Líder Técnico
+                            </h4>
+
+                            <span class="timeline-date">
+                                Proyectos Universitarios
+                            </span>
+
+                            <p>
+                                Organización de equipos, seguimiento de tareas
+                                mediante Jira y coordinación de entregables.
+                            </p>
+
+                        </div>
+
+                        <div class="timeline-item">
+
+                            <h4>
+                                Desarrollo Full Stack
+                            </h4>
+
+                            <span class="timeline-date">
+                                Angular + .NET
+                            </span>
+
+                            <p>
+                                Desarrollo de aplicaciones web,
+                                APIs REST y administración de usuarios.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- PROYECTOS -->
+
+                <section class="card reveal">
+
+                    <h3 class="section-title">
+                        Proyectos Destacados
+                    </h3>
+
+                    <div class="filter-container">
+
+                        <button
+                            class="filter-btn active"
+                            data-filter="all">
+
+                            Todos
+
+                        </button>
+
+                        <button
+                            class="filter-btn"
+                            data-filter="web">
+
+                            Web
+
+                        </button>
+
+                        <button
+                            class="filter-btn"
+                            data-filter="iot">
+
+                            IoT
+
+                        </button>
+
+                    </div>
+
+                    <div class="projects-grid">
+
+                        <article
+                            class="project-card"
+                            data-category="web">
+
+                            <h4>
+                                Sistema de Administración de Usuarios
+                            </h4>
+
+                            <p>
+                                Angular + .NET con autenticación,
+                                roles y paginación.
+                            </p>
+
+                        </article>
+
+                        <article
+                            class="project-card"
+                            data-category="web">
+
+                            <h4>
+                                API + MAUI
+                            </h4>
+
+                            <p>
+                                Backend desacoplado para aplicaciones móviles.
+                            </p>
+
+                        </article>
+
+                        <article
+                            class="project-card"
+                            data-category="iot">
+
+                            <h4>
+                                Automatización con ESP8266
+                            </h4>
+
+                            <p>
+                                Integración IoT para monitoreo
+                                y control.
+                            </p>
+
+                        </article>
+
+                        <article
+                            class="project-card"
+                            data-category="iot">
+
+                            <h4>
+                                Minería de Datos
+                            </h4>
+
+                            <p>
+                                Implementación de árboles de decisión
+                                usando Google Colab.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <!-- EDUCACION -->
+
+                <section class="card reveal">
+
+                    <h3 class="section-title">
+                        Educación
+                    </h3>
+
+                    <div class="timeline">
+
+                        <div class="timeline-item">
+
+                            <h4>
+                                Ingeniería en Gestión y Desarrollo de Software
+                            </h4>
+
+                            <span class="timeline-date">
+                                Universidad Tecnológica del Sur de Sonora
+                            </span>
+
+                        </div>
+
+                        <div class="timeline-item">
+
+                            <h4>
+                                5to Foro Nacional de TI y Sistemas Computacionales
+                            </h4>
+
+                            <span class="timeline-date">
+                                Participación Académica
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- CONTACTO -->
+
+                <section class="card reveal">
+
+                    <h3 class="section-title">
+                        Contacto
+                    </h3>
+
+                    <ul class="info-list">
+
+                        <li>
+                            📧 correo@ejemplo.com
+                        </li>
+
+                        <li>
+                            🐙 github.com/tuusuario
+                        </li>
+
+                        <li>
+                            💼 linkedin.com/in/tuusuario
+                        </li>
+
+                    </ul>
+
+                </section>
+
+            </main>
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- FOOTER -->
+        <!-- ========================= -->
+
+        <footer class="footer">
 
             <p>
-                Angular • .NET • MAUI • PostgreSQL • MongoDB
+                © 2026 César Andrés Álvarez Romero
             </p>
 
-        </div>
+            <p>
+                Versión:
+                <span id="version">
+                    1.0.0
+                </span>
+            </p>
 
-    </header>
+        </footer>
 
-    <section class="section reveal">
-
-        <h2>Sobre mí</h2>
-
-        <p>
-            Desarrollador Full Stack con experiencia en Angular,
-            .NET, MAUI, bases de datos SQL y NoSQL,
-            administración de servidores Linux e integración IoT.
-        </p>
-
-    </section>
-
-    <section class="section reveal">
-
-        <h2>Habilidades Técnicas</h2>
-
-        <div class="skill">
-
-            <span>Angular</span>
-
-            <div class="bar">
-                <div class="progress" data-width="90"></div>
-            </div>
-
-        </div>
-
-        <div class="skill">
-
-            <span>.NET</span>
-
-            <div class="bar">
-                <div class="progress" data-width="90"></div>
-            </div>
-
-        </div>
-
-        <div class="skill">
-
-            <span>MongoDB</span>
-
-            <div class="bar">
-                <div class="progress" data-width="85"></div>
-            </div>
-
-        </div>
-
-        <div class="skill">
-
-            <span>Linux</span>
-
-            <div class="bar">
-                <div class="progress" data-width="80"></div>
-            </div>
-
-        </div>
-
-    </section>
-
-    <section class="section reveal">
-
-        <h2>Tecnologías</h2>
-
-        <div class="cards">
-
-            <div class="card">Angular</div>
-            <div class="card">ASP.NET Core</div>
-            <div class="card">MAUI</div>
-            <div class="card">PostgreSQL</div>
-            <div class="card">MongoDB</div>
-            <div class="card">Arduino</div>
-            <div class="card">ESP8266</div>
-            <div class="card">Ubuntu Server</div>
-
-        </div>
-
-    </section>
-
-    <section class="section reveal">
-
-        <h2>Metodologías y Herramientas</h2>
-
-        <ul>
-            <li>Scrum</li>
-            <li>Jira</li>
-            <li>GitHub</li>
-            <li>Git Flow</li>
-            <li>Moqups</li>
-        </ul>
-
-    </section>
-
-    <footer>
-
-        <p>César Andrés</p>
-
-        <p>
-            Versión:
-            <span id="version"></span>
-        </p>
-
-    </footer>
+    </div>
 
     <script src="config.js"></script>
     <script src="script.js"></script>

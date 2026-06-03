@@ -1,55 +1,314 @@
-const nombre =
-"César Andrés";
+// ======================================
+// CONFIGURACIÓN GENERAL
+// ======================================
 
-let i = 0;
+document.addEventListener("DOMContentLoaded", () => {
 
-function escribir() {
+    inicializarVersion();
+    inicializarTema();
+    inicializarFiltros();
+    inicializarAnimaciones();
 
-    if(i < nombre.length){
+});
 
-        document
-            .getElementById("typing")
-            .innerHTML += nombre.charAt(i);
+// ======================================
+// VERSIONAMIENTO
+// ======================================
 
-        i++;
+function inicializarVersion() {
 
-        setTimeout(escribir,100);
+    const versionElement =
+        document.getElementById("version");
+
+    if (
+        versionElement &&
+        typeof APP_CONFIG !== "undefined"
+    ) {
+
+        versionElement.textContent =
+            APP_CONFIG.version;
+
     }
+
 }
 
-escribir();
+// ======================================
+// MODO OSCURO / CLARO
+// ======================================
 
-document.getElementById("version")
-.textContent = APP_CONFIG.version;
+function inicializarTema() {
 
-const observer =
-new IntersectionObserver(entries => {
+    const themeToggle =
+        document.getElementById("themeToggle");
 
-    entries.forEach(entry => {
+    const themeIcon =
+        document.getElementById("themeIcon");
 
-        if(entry.isIntersecting){
+    const themeText =
+        document.getElementById("themeText");
 
-            entry.target.classList.add("active");
+    // Recuperar tema guardado
+
+    const temaGuardado =
+        localStorage.getItem("theme");
+
+    if (temaGuardado === "dark") {
+
+        document.documentElement.setAttribute(
+            "data-theme",
+            "dark"
+        );
+
+        actualizarBotonTema(
+            themeIcon,
+            themeText,
+            true
+        );
+    }
+
+    if (!themeToggle) return;
+
+    themeToggle.addEventListener("click", () => {
+
+        const temaActual =
+            document.documentElement.getAttribute(
+                "data-theme"
+            );
+
+        const modoOscuro =
+            temaActual === "dark";
+
+        if (modoOscuro) {
+
+            document.documentElement.removeAttribute(
+                "data-theme"
+            );
+
+            localStorage.setItem(
+                "theme",
+                "light"
+            );
+
+            actualizarBotonTema(
+                themeIcon,
+                themeText,
+                false
+            );
+
+        } else {
+
+            document.documentElement.setAttribute(
+                "data-theme",
+                "dark"
+            );
+
+            localStorage.setItem(
+                "theme",
+                "dark"
+            );
+
+            actualizarBotonTema(
+                themeIcon,
+                themeText,
+                true
+            );
+
         }
+
     });
 
-});
+}
 
-document
-.querySelectorAll(".reveal")
-.forEach(el => observer.observe(el));
+function actualizarBotonTema(
+    icono,
+    texto,
+    modoOscuro
+) {
 
-window.addEventListener("load", () => {
+    if (!icono || !texto) return;
 
-    document
-    .querySelectorAll(".progress")
-    .forEach(bar => {
+    if (modoOscuro) {
 
-        bar.style.width =
-        bar.dataset.width + "%";
+        icono.textContent = "☀️";
+        texto.textContent = "Modo Claro";
 
-        bar.style.transition =
-        "2s";
+    } else {
+
+        icono.textContent = "🌙";
+        texto.textContent = "Modo Oscuro";
+
+    }
+
+}
+
+// ======================================
+// FILTRO DE PROYECTOS
+// ======================================
+
+function inicializarFiltros() {
+
+    const botones =
+        document.querySelectorAll(
+            ".filter-btn"
+        );
+
+    const proyectos =
+        document.querySelectorAll(
+            ".project-card"
+        );
+
+    botones.forEach((boton) => {
+
+        boton.addEventListener("click", () => {
+
+            botones.forEach(btn =>
+                btn.classList.remove(
+                    "active"
+                )
+            );
+
+            boton.classList.add(
+                "active"
+            );
+
+            const categoria =
+                boton.dataset.filter;
+
+            proyectos.forEach(
+                (proyecto) => {
+
+                    const categoriaProyecto =
+                        proyecto.dataset.category;
+
+                    const mostrar =
+                        categoria === "all" ||
+                        categoriaProyecto === categoria;
+
+                    if (mostrar) {
+
+                        proyecto.classList.remove(
+                            "hidden"
+                        );
+
+                    } else {
+
+                        proyecto.classList.add(
+                            "hidden"
+                        );
+
+                    }
+
+                }
+            );
+
+        });
+
     });
 
-});
+}
+
+// ======================================
+// ANIMACIONES REVEAL
+// ======================================
+
+function inicializarAnimaciones() {
+
+    const elementos =
+        document.querySelectorAll(
+            ".reveal"
+        );
+
+    if (!elementos.length) return;
+
+    const observer =
+        new IntersectionObserver(
+
+            (entries) => {
+
+                entries.forEach(
+                    (entry) => {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target.classList.add(
+                                "active"
+                            );
+
+                        }
+
+                    }
+                );
+
+            },
+
+            {
+                threshold: 0.15
+            }
+
+        );
+
+    elementos.forEach(
+        (elemento) => {
+
+            observer.observe(
+                elemento
+            );
+
+        }
+    );
+
+}
+
+// ======================================
+// EFECTO ESCRITURA (OPCIONAL)
+// ======================================
+
+function efectoEscritura(
+    elementoId,
+    texto,
+    velocidad = 80
+) {
+
+    const elemento =
+        document.getElementById(
+            elementoId
+        );
+
+    if (!elemento) return;
+
+    elemento.textContent = "";
+
+    let indice = 0;
+
+    function escribir() {
+
+        if (indice < texto.length) {
+
+            elemento.textContent +=
+                texto.charAt(indice);
+
+            indice++;
+
+            setTimeout(
+                escribir,
+                velocidad
+            );
+
+        }
+
+    }
+
+    escribir();
+
+}
+
+// ======================================
+// EJEMPLO DE USO
+// ======================================
+
+// efectoEscritura(
+//     "nombre",
+//     "César Andrés Álvarez Romero"
+// );
