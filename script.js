@@ -257,71 +257,20 @@ function inicializarAnimaciones() {
 ========================== */
 
 async function descargarPDF() {
-
-    const { jsPDF } =
-        window.jspdf;
-
-    const pdf =
-        new jsPDF();
-
-    let y = 20;
-
-    pdf.setFontSize(22);
-
-    pdf.text(
-        APP_CONFIG.nombre,
-        20,
-        y
-    );
-
-    y += 10;
-
-    pdf.setFontSize(14);
-
-    pdf.text(
-        APP_CONFIG.profesion,
-        20,
-        y
-    );
-
-    y += 15;
-
-    pdf.setFontSize(11);
-
-    pdf.text(
-        `Email: ${APP_CONFIG.email}`,
-        20,
-        y
-    );
-
-    y += 8;
-
-    pdf.text(
-        `GitHub: ${APP_CONFIG.github}`,
-        20,
-        y
-    );
-
-    y += 15;
-
-    pdf.text(
-        "Angular, .NET, ASP.NET Core, MAUI",
-        20,
-        y
-    );
-
-    y += 8;
-
-    pdf.text(
-        "PostgreSQL, SQL Server",
-        20,
-        y
-    );
-
-    pdf.save(
-        "CV_Cesar_Andres_Alvarez_Romero.pdf"
-    );
-
+    // 1. Creamos un enlace (etiqueta <a>) temporal en memoria
+    const enlace = document.createElement("a");
+    
+    // 2. CORRECCIÓN DE RUTA: Apuntamos a la subcarpeta 'CV' dentro de 'assets'
+    // Y usamos el nombre de archivo exacto que aparece en tu explorador.
+    enlace.href = "assets/CV/CV_Cesar_Andres_Alvarez_Romero.pdf"; 
+    
+    // 3. Indicamos el nombre con el que queremos que el usuario lo guarde
+    enlace.download = "CV_Cesar_Andres_Alvarez_Romero.pdf";
+    
+    // 4. Agregamos el enlace al documento, lo "clicamos" y lo borramos
+    document.body.appendChild(enlace);
+    enlace.click();
+    document.body.removeChild(enlace);
 }
 
 function inicializarPDF() {
