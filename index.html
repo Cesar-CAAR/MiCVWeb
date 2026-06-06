@@ -1,243 +1,393 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>César Andres Alvarez Romero | Portfolio Profesional</title>
+    <title>César Andres Alvarez Romero | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+<body data-theme="dark">
 
-<body>
-    <div class="container">
+<!-- ========== CANVAS 3D HERO (LOBBY DETROIT) ========== -->
+<canvas id="hero-canvas"></canvas>
 
-        <header class="header-card">
-            <div class="header-content">
-
-                <div class="profile-container">
-                    <img src="assets/img/descarga.jpg" alt="Foto de Perfil" class="profile-image">
-                </div>
-
-                <div class="profile-info">
-                    <h1>César Andres Alvarez Romero</h1>
-                    <h2 class="subtitle">Full Stack Developer • Mobile Developer</h2>
-                    <p class="header-description">
-                        Angular • .NET • ASP.NET Core • MAUI • PostgreSQL • SQL Server
-                    </p>
-                </div>
-
-                <div class="action-buttons">
-                    <button id="downloadPdfBtn" class="pdf-btn">
-                        📄 Descargar PDF
-                    </button>
-
-                    <button id="themeToggle" class="theme-btn">
-                        <span id="themeIcon">🌙</span>
-                        <span id="themeText">Modo Oscuro</span>
-                    </button>
-                </div>
-
-            </div>
-        </header>
-
-        <div class="layout">
-
-            <aside>
-                <section class="card reveal">
-                    <h3 class="section-title">Información</h3>
-                    <ul class="info-list">
-                        <li>📍 Vícam, Guaymas, Sonora, México</li>
-                        <li>🎓 Universidad Tecnológica del Sur de Sonora</li>
-                    </ul>
-                </section>
-
-                <section class="card reveal">
-                    <h3 class="section-title">Habilidades</h3>
-
-                    <div class="skill-group">
-                        <h4>Frontend</h4>
-                        <div class="badge-container">
-                            <span class="badge">Angular</span>
-                            <span class="badge">TypeScript</span>
-                            <span class="badge">JavaScript</span>
-                            <span class="badge">HTML5</span>
-                            <span class="badge">CSS3</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-group">
-                        <h4>Backend</h4>
-                        <div class="badge-container">
-                            <span class="badge">.NET</span>
-                            <span class="badge">ASP.NET Core</span>
-                            <span class="badge">C#</span>
-                            <span class="badge">REST API</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-group">
-                        <h4>Mobile</h4>
-                        <div class="badge-container">
-                            <span class="badge">.NET MAUI</span>
-                            <span class="badge">Android</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-group">
-                        <h4>Bases de Datos</h4>
-                        <div class="badge-container">
-                            <span class="badge">PostgreSQL</span>
-                            <span class="badge">SQL Server</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-group">
-                        <h4>DevOps y Linux</h4>
-                        <div class="badge-container">
-                            <span class="badge">Ubuntu Server</span>
-                            <span class="badge">SSH</span>
-                            <span class="badge">Git</span>
-                            <span class="badge">GitHub</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-group">
-                        <h4>Gestión</h4>
-                        <div class="badge-container">
-                            <span class="badge">Scrum</span>
-                            <span class="badge">Jira</span>
-                            <span class="badge">Moqups</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-group">
-                        <h4>IoT</h4>
-                        <div class="badge-container">
-                            <span class="badge">Arduino</span>
-                        </div>
-                    </div>
-                </section>
-            </aside>
-
-            <main>
-                <section class="card reveal">
-                    <h3 class="section-title">Perfil Profesional</h3>
-                    <p>
-                        Desarrollador Full-Stack especializado en aplicaciones web,
-                        móviles y soluciones IoT utilizando Angular, .NET,
-                        ASP.NET Core y .NET MAUI.
-                    </p>
-                    <br>
-                    <p>
-                        Experiencia en arquitecturas desacopladas y desarrollo de APIs REST. Conocimientos aplicados en
-                        bases de datos y trabajo colaborativo bajo el marco de trabajo Scrum.
-                    </p>
-                    <br>
-                    <p>
-                        Orientado a la calidad del software,
-                        buenas prácticas de desarrollo y mejora continua.
-                    </p>
-                </section>
-
-                <section class="card reveal">
-                    <h3 class="section-title">Experiencia Profesional</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <h4>Arcano Pizza | Sistema Integral de Gestión Web</h4>
-                            <span class="timeline-date">
-                                Desarrollador Full-Stack
-                                <br>
-                                Enero 2026 – Abril 2026
-                            </span>
-                            <ul>
-                                <li>Diseño e implementación de arquitectura cliente-servidor desacoplada utilizando Angular y .NET.</li>
-                                <li>Desarrollo de interfaces dinámicas y responsivas mediante Angular.</li>
-                                <li>Implementación del sistema visual "Midnight Spell".</li>
-                                <li>Desarrollo de servicios backend en .NET para la lógica de negocio.</li>
-                                <li>Troubleshooting, debugging y documentación técnica para resolución de incidencias.</li>
-                            </ul>
-                        </div>
-
-                        <div class="timeline-item">
-                            <h4>Scrum Master y Líder Técnico</h4>
-                            <span class="timeline-date">Proyectos Universitarios</span>
-                            <p>
-                                Coordinación de equipos de desarrollo utilizando Scrum,
-                                Jira y GitHub para la planificación y seguimiento de proyectos.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="card reveal">
-                    <h3 class="section-title">Proyectos Destacados</h3>
-                    <div class="filter-container">
-                        <button class="filter-btn active" data-filter="all">Todos</button>
-                        <button class="filter-btn" data-filter="web">Web</button>
-                        <button class="filter-btn" data-filter="iot">IoT</button>
-                    </div>
-
-                    <div class="projects-grid">
-                        <article class="project-card" data-category="web">
-                            <h4>Arcano Pizza</h4>
-                            <p>Sistema integral de gestión web desarrollado con Angular y .NET bajo arquitectura cliente-servidor desacoplada.</p>
-                        </article>
-
-                        <article class="project-card" data-category="web">
-                            <h4>Sistema de Administración de Usuarios</h4>
-                            <p>Gestión de usuarios, roles y permisos utilizando Angular y ASP.NET Core.</p>
-                        </article>
-
-                        <article class="project-card" data-category="iot">
-                            <h4>Integración IoT con Arduino</h4>
-                            <p>Comunicación entre dispositivos físicos y aplicaciones móviles para monitoreo y automatización.</p>
-                        </article>
-
-                        <article class="project-card" data-category="web">
-                            <h4>API + Aplicación MAUI</h4>
-                            <p>Desarrollo de backend en .NET conectado a aplicaciones móviles multiplataforma.</p>
-                        </article>
-                    </div>
-                </section>
-
-                <section class="card reveal">
-                    <h3 class="section-title">Educación</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <h4>Técnico Superior Universitario en Desarrollo de Software Multiplataforma</h4>
-                            <span class="timeline-date">Universidad Tecnológica del Sur de Sonora</span>
-                        </div>
-                        <div class="timeline-item">
-                            <h4>Ingeniería en Desarrollo y Gestión de Software</h4>
-                            <span class="timeline-date">Universidad Tecnológica del Sur de Sonora</span>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="card reveal">
-                    <h3 class="section-title">Contacto</h3>
-                    <ul class="info-list">
-                        <li>
-                            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail" width="18">
-                            <a id="emailLink"></a>
-                        </li>
-                        <li>
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="18">
-                            <a id="githubLink" target="_blank"></a>
-                        </li>
-                    </ul>
-                </section>
-            </main>
-        </div>
-
-        <footer class="footer">
-            <p>© 2026 César Andres Alvarez Romero</p>
-            <p>Versión: <span id="version">1.0.0</span></p>
-        </footer>
+<!-- ========== NAV ========== -->
+<nav class="nav" id="nav">
+    <ul class="nav-links">
+        <li><a href="#perfil">Perfil</a></li>
+        <li><a href="#habilidades">Skills</a></li>
+        <li><a href="#experiencia">Exp.</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <div class="nav-actions">
+        <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
+            <span id="themeIcon">☀️</span>
+        </button>
+        <button id="downloadPdfBtn" class="nav-pdf-btn">Currículum</button>
     </div>
+</nav>
 
-    <script src="config.js"></script>
-    <script src="script.js"></script>
+<!-- ========== HERO ========== -->
+<section class="hero" id="hero">
+    <div class="hero-content">
+        <div class="hero-tag reveal-up">Full Stack Developer</div>
+        <h1 class="hero-title reveal-up">
+            <span class="hero-name">César Andres Alvarez Romero</span>
+        </h1>
+        <p class="hero-sub reveal-up">
+            Ingeniero en desarrollo de software multiplataforma.<br>
+            Especialista en
+            <span class="typed-area">
+                <span class="typed-word active">.NET & Angular</span>
+                <span class="typed-word">IoT & MAUI</span>
+            </span>
+        </p>
+        <div class="hero-cta reveal-up">
+            <a href="#perfil" class="cta-primary">Ver portafolio</a>
+            <a href="#contacto" class="cta-secondary">Contactar</a>
+        </div>
+    </div>
+    <div class="hero-scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+    </div>
+</section>
+
+<!-- ========== SCENE DIVIDER: DATA CORE ========== -->
+<div class="scene-divider scene-code">
+    <div class="divider-label">
+        <span class="divider-title">Data Core</span>
+    </div>
+    <canvas class="mini-canvas" id="code-canvas"></canvas>
+</div>
+
+<!-- ========== PERFIL ========== -->
+<section class="section" id="perfil">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Descripción</h2>
+        </div>
+        <div class="profile-grid">
+            <div class="profile-card glass reveal-left">
+                <div class="profile-img-wrap">
+                    <img src="assets/img/descarga.jpg" alt="César Alvarez" class="profile-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="profile-img-fallback">CA</div>
+                    <div class="profile-ring"></div>
+                    <div class="profile-ring-2"></div>
+                </div>
+                <div class="profile-meta">
+                    <div class="meta-chip">📍 Vicam, Sonora</div>
+                    <div class="meta-chip">🎓 UTS</div>
+                </div>
+            </div>
+            <div class="profile-text reveal-right">
+                <p class="profile-lead">
+                    Desarrollador <strong>Full-Stack</strong> especializado en aplicaciones web, móviles y soluciones IoT utilizando Angular, .NET, ASP.NET Core y .NET MAUI.
+                </p>
+                <p>
+                    Experiencia en arquitecturas desacopladas y desarrollo de APIs REST. Conocimientos aplicados en bases de datos y trabajo colaborativo bajo el marco de trabajo Scrum.
+                </p>
+                <p>
+                    Orientado a la calidad del software, buenas prácticas de desarrollo y mejora continua.
+                </p>
+                <div class="stack-pills">
+                    <span class="pill pill-code">Angular</span>
+                    <span class="pill pill-code">.NET</span>
+                    <span class="pill pill-code">C#</span>
+                    <span class="pill pill-code">PostgreSQL</span>
+                    <span class="pill pill-code">MAUI</span>
+                    <span class="pill pill-code">REST API</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== HABILIDADES ========== -->
+<section class="section section-alt" id="habilidades">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Habilidades</h2>
+        </div>
+        <div class="skills-universe">
+            <div class="skill-tracks">
+                <div class="skill-track reveal">
+                    <div class="track-header">
+                        <span class="track-icon">⬡</span>
+                        <h3>Frontend</h3>
+                    </div>
+                    <div class="track-items">
+                        <div class="skill-bar-item">
+                            <span>Angular</span>
+                            <div class="bar-wrap"><div class="bar-fill" style="--pct:90%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span>TypeScript</span>
+                            <div class="bar-wrap"><div class="bar-fill" style="--pct:88%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span>HTML5/CSS3</span>
+                            <div class="bar-wrap"><div class="bar-fill" style="--pct:92%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span>JavaScript</span>
+                            <div class="bar-wrap"><div class="bar-fill" style="--pct:85%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-track reveal">
+                    <div class="track-header">
+                        <span class="track-icon">◈</span>
+                        <h3>Backend</h3>
+                    </div>
+                    <div class="track-items">
+                        <div class="skill-bar-item">
+                            <span>.NET / C#</span>
+                            <div class="bar-wrap"><div class="bar-fill" style="--pct:88%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span>ASP.NET Core</span>
+                            <div class="bar-wrap"><div class="bar-fill" style="--pct:85%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span>REST API</span>
+                            <div class="bar-wrap"><div class="bar-fill" style="--pct:90%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-track reveal">
+                    <div class="track-header">
+                        <span class="track-icon">◎</span>
+                        <h3>Datos & DevOps</h3>
+                    </div>
+                    <div class="track-items">
+                        <div class="skill-bar-item">
+                            <span>PostgreSQL</span>
+                            <div class="bar-wrap"><div class="bar-fill" style="--pct:55%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span>SQL Server</span>
+                            <div class="bar-wrap"><div class="bar-fill" style="--pct:55%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span>Git / GitHub</span>
+                            <div class="bar-wrap"><div class="bar-fill" style="--pct:80%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span>Ubuntu Server</span>
+                            <div class="bar-wrap"><div class="bar-fill" style="--pct:70%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-track reveal">
+                    <div class="track-header">
+                        <span class="track-icon">◇</span>
+                        <h3>Mobile & Más</h3>
+                    </div>
+                    <div class="track-items">
+                        <div class="skill-bar-item">
+                            <span>.NET MAUI</span>
+                            <div class="bar-wrap"><div class="bar-fill" style="--pct:80%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span>Arduino / IoT</span>
+                            <div class="bar-wrap"><div class="bar-fill" style="--pct:70%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span>Scrum / Jira</span>
+                            <div class="bar-wrap"><div class="bar-fill" style="--pct:85%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== EXPERIENCIA ========== -->
+<section class="section" id="experiencia">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Experiencia</h2>
+        </div>
+        <div class="timeline-3d">
+            <div class="tl-item reveal-left">
+                <div class="tl-marker">
+                    <div class="tl-cube">
+                        <div class="cube-face front">W</div>
+                        <div class="cube-face back">W</div>
+                        <div class="cube-face left">W</div>
+                        <div class="cube-face right">W</div>
+                        <div class="cube-face top">W</div>
+                        <div class="cube-face bottom">W</div>
+                    </div>
+                </div>
+                <div class="tl-content glass">
+                    <div class="tl-meta">
+                        <span class="tl-company">Arcano Pizza</span>
+                        <span class="tl-date">Ene 2026 – Abr 2026</span>
+                    </div>
+                    <h3 class="tl-role">Full Stack Developer</h3>
+                    <ul class="tl-list">
+                        <li>Arquitectura cliente-servidor desacoplada con Angular y .NET</li>
+                        <li>Interfaces dinámicas y responsivas mediante Angular</li>
+                        <li>Sistema visual "Midnight Spell"</li>
+                        <li>Servicios backend y lógica de negocio en .NET</li>
+                        <li>Troubleshooting, debugging y documentación técnica</li>
+                    </ul>
+                    <div class="tl-tags">
+                        <span>Angular</span><span>.NET</span><span>PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tl-item reveal-right">
+                <div class="tl-marker">
+                    <div class="tl-cube">
+                        <div class="cube-face front">S</div>
+                        <div class="cube-face back">S</div>
+                        <div class="cube-face left">S</div>
+                        <div class="cube-face right">S</div>
+                        <div class="cube-face top">S</div>
+                        <div class="cube-face bottom">S</div>
+                    </div>
+                </div>
+                <div class="tl-content glass">
+                    <div class="tl-meta">
+                        <span class="tl-company">Proyectos Universitarios</span>
+                        <span class="tl-date">2023 – 2025</span>
+                    </div>
+                    <h3 class="tl-role">Scrum Master & Líder Técnico</h3>
+                    <p class="tl-desc">Coordinación de equipos de desarrollo utilizando Scrum, Jira y GitHub para planificación y seguimiento de proyectos.</p>
+                    <div class="tl-tags">
+                        <span>Scrum</span><span>Jira</span><span>GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== PROYECTOS ========== -->
+<section class="section section-alt" id="proyectos">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Proyectos</h2>
+        </div>
+        <div class="filter-row">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="iot">IoT</button>
+        </div>
+        <div class="projects-grid">
+            <article class="project-card glass reveal" data-category="web">
+                <div class="project-number">01</div>
+                <div class="project-glyph">◈</div>
+                <h3>Arcano Pizza</h3>
+                <p>Sistema integral de gestión web con Angular y .NET bajo arquitectura cliente-servidor desacoplada.</p>
+                <div class="project-footer">
+                    <div class="project-tags"><span>Angular</span><span>.NET</span></div>
+                    <span class="project-type">Web</span>
+                </div>
+            </article>
+
+            <article class="project-card glass reveal" data-category="web">
+                <div class="project-number">02</div>
+                <div class="project-glyph">⬡</div>
+                <h3>Sistema de Usuarios</h3>
+                <p>Gestión de usuarios, roles y permisos con Angular y ASP.NET Core. RBAC robusto.</p>
+                <div class="project-footer">
+                    <div class="project-tags"><span>ASP.NET</span><span>Angular</span></div>
+                    <span class="project-type">Web</span>
+                </div>
+            </article>
+
+            <article class="project-card glass reveal" data-category="iot">
+                <div class="project-number">03</div>
+                <div class="project-glyph">◎</div>
+                <h3>IoT con Arduino</h3>
+                <p>Comunicación entre dispositivos físicos y apps móviles para monitoreo y automatización.</p>
+                <div class="project-footer">
+                    <div class="project-tags"><span>Arduino</span><span>IoT</span></div>
+                    <span class="project-type">IoT</span>
+                </div>
+            </article>
+
+            <article class="project-card glass reveal" data-category="web">
+                <div class="project-number">04</div>
+                <div class="project-glyph">◇</div>
+                <h3>API + App MAUI</h3>
+                <p>Backend .NET conectado a aplicaciones móviles multiplataforma Android/iOS.</p>
+                <div class="project-footer">
+                    <div class="project-tags"><span>.NET MAUI</span><span>API</span></div>
+                    <span class="project-type">Mobile</span>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ========== EDUCACIÓN ========== -->
+<section class="section" id="educacion">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Educación</h2>
+        </div>
+        <div class="edu-cards">
+            <div class="edu-card glass reveal-left">
+                <span class="edu-year">2023 – 2025</span>
+                <div class="edu-degree">Técnico Superior Universitario</div>
+                <div class="edu-field">Desarrollo de Software Multiplataforma</div>
+                <div class="edu-uni">UTS — Universidad Tecnológica del Sur de Sonora</div>
+            </div>
+            <div class="edu-card glass reveal-right">
+                <span class="edu-year">2025 – Presente</span>
+                <div class="edu-degree">Ingeniería</div>
+                <div class="edu-field">Desarrollo y Gestión de Software</div>
+                <div class="edu-uni">UTS — Universidad Tecnológica del Sur de Sonora</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CONTACTO ========== -->
+<section class="section section-contact" id="contacto">
+    <div class="contact-bg-canvas" id="contact-canvas"></canvas>
+    <div class="container">
+        <div class="contact-inner">
+            <h2 class="contact-title reveal-up">Contacto</h2>
+            <div class="contact-links reveal-up">
+                <a href="mailto:cesar.andres5242@gmail.com" class="contact-link">
+                    <span class="cl-icon">✉</span>
+                    <span class="cl-text">cesar.andres5242@gmail.com</span>
+                    <span class="cl-arrow">→</span>
+                </a>
+                <a href="https://github.com/Cesar-CAAR" target="_blank" class="contact-link">
+                    <span class="cl-icon">⌥</span>
+                    <span class="cl-text">github.com/Cesar-CAAR</span>
+                    <span class="cl-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+    <div class="footer-inner">
+        <span class="footer-copy">© 2026 César Andres Alvarez Romero · v2.0.0</span>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="config.js"></script>
+<script src="script.js"></script>
 </body>
-
 </html>

@@ -1,1 +1,419 @@
-var _0x536a=["\x76\x65\x72\x73\x69\x6F\x6E","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x41\x50\x50\x5F\x43\x4F\x4E\x46\x49\x47","\x74\x65\x78\x74\x43\x6F\x6E\x74\x65\x6E\x74","\x65\x6D\x61\x69\x6C\x4C\x69\x6E\x6B","\x67\x69\x74\x68\x75\x62\x4C\x69\x6E\x6B","\x65\x6D\x61\x69\x6C","\x6D\x61\x69\x6C\x74\x6F\x3A","\x68\x72\x65\x66","\x43\x65\x73\x61\x72\x2D\x43\x41\x41\x52","\x67\x69\x74\x68\x75\x62","\x74\x68\x65\x6D\x65\x54\x6F\x67\x67\x6C\x65","\x74\x68\x65\x6D\x65\x49\x63\x6F\x6E","\x74\x68\x65\x6D\x65\x54\x65\x78\x74","\x74\x68\x65\x6D\x65","\x67\x65\x74\x49\x74\x65\x6D","\x64\x61\x72\x6B","\x64\x61\x74\x61\x2D\x74\x68\x65\x6D\x65","\x73\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65","\u2600\uFE0F","\x4D\x6F\x64\x6F\x20\x43\x6C\x61\x72\x6F","\x63\x6C\x69\x63\x6B","\x67\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65","\x72\x65\x6D\x6F\x76\x65\x41\x74\x74\x72\x69\x62\x75\x74\x65","\x6C\x69\x67\x68\x74","\x73\x65\x74\x49\x74\x65\x6D","\uD83C\uDF19","\x4D\x6F\x64\x6F\x20\x4F\x73\x63\x75\x72\x6F","\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72","\x2E\x66\x69\x6C\x74\x65\x72\x2D\x62\x74\x6E","\x71\x75\x65\x72\x79\x53\x65\x6C\x65\x63\x74\x6F\x72\x41\x6C\x6C","\x2E\x70\x72\x6F\x6A\x65\x63\x74\x2D\x63\x61\x72\x64","\x61\x63\x74\x69\x76\x65","\x72\x65\x6D\x6F\x76\x65","\x63\x6C\x61\x73\x73\x4C\x69\x73\x74","\x61\x64\x64","\x66\x69\x6C\x74\x65\x72","\x64\x61\x74\x61\x73\x65\x74","\x61\x6C\x6C","\x63\x61\x74\x65\x67\x6F\x72\x79","\x68\x69\x64\x64\x65\x6E","\x74\x6F\x67\x67\x6C\x65","\x66\x6F\x72\x45\x61\x63\x68","\x2E\x72\x65\x76\x65\x61\x6C","\x69\x73\x49\x6E\x74\x65\x72\x73\x65\x63\x74\x69\x6E\x67","\x74\x61\x72\x67\x65\x74","\x6F\x62\x73\x65\x72\x76\x65","\x61","\x63\x72\x65\x61\x74\x65\x45\x6C\x65\x6D\x65\x6E\x74","\x61\x73\x73\x65\x74\x73\x2F\x43\x56\x2F\x43\x56\x5F\x43\x65\x73\x61\x72\x5F\x41\x6E\x64\x72\x65\x73\x5F\x41\x6C\x76\x61\x72\x65\x7A\x5F\x52\x6F\x6D\x65\x72\x6F\x2E\x70\x64\x66","\x43\x56\x5F\x43\x65\x73\x61\x72\x5F\x41\x6E\x64\x72\x65\x73\x5F\x41\x6C\x76\x61\x72\x65\x7A\x5F\x52\x6F\x6D\x65\x72\x6F\x2E\x70\x64\x66","\x64\x6F\x77\x6E\x6C\x6F\x61\x64","\x61\x70\x70\x65\x6E\x64\x43\x68\x69\x6C\x64","\x62\x6F\x64\x79","\x72\x65\x6D\x6F\x76\x65\x43\x68\x69\x6C\x64","\x64\x6F\x77\x6E\x6C\x6F\x61\x64\x50\x64\x66\x42\x74\x6E","\x44\x4F\x4D\x43\x6F\x6E\x74\x65\x6E\x74\x4C\x6F\x61\x64\x65\x64"];function inicializarVersion(){const _0xd155x2=document[_0x536a[1]](_0x536a[0]);if(_0xd155x2&&window[_0x536a[2]]){_0xd155x2[_0x536a[3]]=APP_CONFIG[_0x536a[0]]}}function inicializarContacto(){const _0xd155x4=document[_0x536a[1]](_0x536a[4]);const _0xd155x5=document[_0x536a[1]](_0x536a[5]);if(!window[_0x536a[2]]){return};if(_0xd155x4){_0xd155x4[_0x536a[3]]=APP_CONFIG[_0x536a[6]];_0xd155x4[_0x536a[8]]=_0x536a[7]+APP_CONFIG[_0x536a[6]]};if(_0xd155x5){_0xd155x5[_0x536a[3]]=_0x536a[9];_0xd155x5[_0x536a[8]]=APP_CONFIG[_0x536a[10]]}}function inicializarTema(){const _0xd155x7=document[_0x536a[1]](_0x536a[11]);const _0xd155x8=document[_0x536a[1]](_0x536a[12]);const _0xd155x9=document[_0x536a[1]](_0x536a[13]);if(!_0xd155x7){return};const _0xd155xa=localStorage[_0x536a[15]](_0x536a[14]);if(_0xd155xa===_0x536a[16]){document.documentElement[_0x536a[18]](_0x536a[17],_0x536a[16]);_0xd155x8[_0x536a[3]]=_0x536a[19];_0xd155x9[_0x536a[3]]=_0x536a[20]};_0xd155x7[_0x536a[28]](_0x536a[21],()=>{const _0xd155xb=document.documentElement[_0x536a[22]](_0x536a[17]);if(_0xd155xb===_0x536a[16]){document.documentElement[_0x536a[23]](_0x536a[17]);localStorage[_0x536a[25]](_0x536a[14],_0x536a[24]);_0xd155x8[_0x536a[3]]=_0x536a[26];_0xd155x9[_0x536a[3]]=_0x536a[27]}else {document.documentElement[_0x536a[18]](_0x536a[17],_0x536a[16]);localStorage[_0x536a[25]](_0x536a[14],_0x536a[16]);_0xd155x8[_0x536a[3]]=_0x536a[19];_0xd155x9[_0x536a[3]]=_0x536a[20]}})}function inicializarFiltros(){const _0xd155xd=document[_0x536a[30]](_0x536a[29]);const _0xd155xe=document[_0x536a[30]](_0x536a[31]);_0xd155xd[_0x536a[42]]((_0xd155xf)=>{_0xd155xf[_0x536a[28]](_0x536a[21],()=>{_0xd155xd[_0x536a[42]]((_0xd155x10)=>_0xd155x10[_0x536a[34]][_0x536a[33]](_0x536a[32]));_0xd155xf[_0x536a[34]][_0x536a[35]](_0x536a[32]);const _0xd155x11=_0xd155xf[_0x536a[37]][_0x536a[36]];_0xd155xe[_0x536a[42]]((_0xd155x12)=>{const _0xd155x13=_0xd155x11===_0x536a[38]||_0xd155x12[_0x536a[37]][_0x536a[39]]===_0xd155x11;_0xd155x12[_0x536a[34]][_0x536a[41]](_0x536a[40],!_0xd155x13)})})})}function inicializarAnimaciones(){const _0xd155x15=document[_0x536a[30]](_0x536a[43]);const _0xd155x16= new IntersectionObserver((_0xd155x17)=>{_0xd155x17[_0x536a[42]]((_0xd155x18)=>{if(_0xd155x18[_0x536a[44]]){_0xd155x18[_0x536a[45]][_0x536a[34]][_0x536a[35]](_0x536a[32])}})},{threshold:0.15});_0xd155x15[_0x536a[42]]((_0xd155x19)=>_0xd155x16[_0x536a[46]](_0xd155x19))}async function descargarPDF(){const _0xd155x1b=document[_0x536a[48]](_0x536a[47]);_0xd155x1b[_0x536a[8]]=_0x536a[49];_0xd155x1b[_0x536a[51]]=_0x536a[50];document[_0x536a[53]][_0x536a[52]](_0xd155x1b);_0xd155x1b[_0x536a[21]]();document[_0x536a[53]][_0x536a[54]](_0xd155x1b)}function inicializarPDF(){const _0xd155x1d=document[_0x536a[1]](_0x536a[55]);if(!_0xd155x1d){return};_0xd155x1d[_0x536a[28]](_0x536a[21],descargarPDF)}document[_0x536a[28]](_0x536a[56],()=>{inicializarVersion();inicializarContacto();inicializarTema();inicializarFiltros();inicializarAnimaciones();inicializarPDF()})
+/* ============================================================
+   PORTFOLIO 3D — script.js (Detroit Lobby)
+   Escena: núcleo holográfico, rejilla de datos, partículas flotantes.
+   ============================================================ */
+
+/* ==========================================
+   CONFIG (de config.js)
+========================================== */
+window.APP_CONFIG = {
+    nombre:    "César Andres Alvarez Romero",
+    email:     "cesar.andres5242@gmail.com",
+    github:    "https://github.com/Cesar-CAAR",
+    version:   "2.0",
+};
+
+/* ==========================================
+   HELPERS
+========================================== */
+const $ = (sel) => document.querySelector(sel);
+const $$ = (sel) => document.querySelectorAll(sel);
+
+/* ==========================================
+   NAV SCROLL
+========================================== */
+function initNav() {
+    const nav = $('#nav');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+}
+
+/* ==========================================
+   THEME TOGGLE
+========================================== */
+function initTheme() {
+    const btn   = $('#themeToggle');
+    const icon  = $('#themeIcon');
+    const saved = localStorage.getItem('portfolio-theme') || 'dark';
+    document.body.dataset.theme = saved;
+    icon.textContent = saved === 'dark' ? '☀️' : '🌙';
+    btn.addEventListener('click', () => {
+        const next = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.body.dataset.theme = next;
+        icon.textContent = next === 'dark' ? '☀️' : '🌙';
+        localStorage.setItem('portfolio-theme', next);
+    });
+}
+
+/* ==========================================
+   TYPED WORDS
+========================================== */
+function initTyped() {
+    const words = $$('.typed-word');
+    let current = 0;
+    setInterval(() => {
+        words[current].classList.remove('active');
+        words[current].classList.add('exit');
+        setTimeout(() => { words[current].classList.remove('exit'); }, 500);
+        current = (current + 1) % words.length;
+        words[current].classList.add('active');
+    }, 2800);
+}
+
+/* ==========================================
+   REVEAL ANIMATIONS
+========================================== */
+function initReveal() {
+    const els = $$('.reveal-up, .reveal-left, .reveal-right, .reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('active');
+                if (e.target.classList.contains('skill-track')) {
+                    e.target.classList.add('active');
+                }
+            }
+        });
+    }, { threshold: 0.12 });
+    els.forEach(el => observer.observe(el));
+    setTimeout(() => {
+        $$('.hero .reveal-up').forEach((el, i) => {
+            setTimeout(() => el.classList.add('active'), i * 150);
+        });
+    }, 300);
+}
+
+/* ==========================================
+   PROJECT FILTERS
+========================================== */
+function initFilters() {
+    const btns = $$('.filter-btn');
+    const cards = $$('.project-card');
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.dataset.filter;
+            cards.forEach(card => {
+                const show = filter === 'all' || card.dataset.category === filter;
+                card.classList.toggle('hidden', !show);
+            });
+        });
+    });
+}
+
+/* ==========================================
+   PDF
+========================================== */
+function initPDF() {
+    const btn = $('#downloadPdfBtn');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+        const a = document.createElement('a');
+        a.href = 'assets/CV/CV_Cesar_Andres_Alvarez_Romero.pdf';
+        a.download = 'CV_Cesar_Andres_Alvarez_Romero.pdf';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    });
+}
+
+/* ==========================================
+   THREE.JS — HERO SCENE (Detroit Lobby)
+   Núcleo holográfico central + rejilla + partículas
+========================================== */
+function initHeroScene() {
+    if (!window.THREE) return;
+
+    const canvas = document.getElementById('hero-canvas');
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x050a14, 0.0008);
+
+    const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.set(0, 1.5, 8);
+    camera.lookAt(0, 0.5, 0);
+
+    /* ---- Luces ---- */
+    scene.add(new THREE.AmbientLight(0x0a1a3a, 0.3));
+    const mainLight = new THREE.PointLight(0x00c8ff, 1.8, 15);
+    mainLight.position.set(0, 2, 3);
+    scene.add(mainLight);
+    const fillLight = new THREE.PointLight(0x7b68ee, 0.6, 12);
+    fillLight.position.set(-2, 1, 1);
+    scene.add(fillLight);
+
+    /* ---- Núcleo holográfico central (icosaedro wireframe) ---- */
+    const coreGeo = new THREE.IcosahedronGeometry(1.2, 1);
+    const coreMat = new THREE.MeshBasicMaterial({
+        color: 0x00c8ff,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.15,
+    });
+    const core = new THREE.Mesh(coreGeo, coreMat);
+    core.position.set(0, 0.8, 0);
+    scene.add(core);
+
+    const innerSphere = new THREE.Mesh(
+        new THREE.SphereGeometry(0.3, 16, 16),
+        new THREE.MeshBasicMaterial({ color: 0x00c8ff, transparent: true, opacity: 0.4 })
+    );
+    innerSphere.position.copy(core.position);
+    scene.add(innerSphere);
+
+    // Anillos flotantes
+    for (let i = 0; i < 3; i++) {
+        const ringGeo = new THREE.TorusGeometry(1.0 + i * 0.25, 0.015, 16, 100);
+        const ringMat = new THREE.MeshBasicMaterial({ color: 0x00c8ff, transparent: true, opacity: 0.25 - i * 0.06 });
+        const ring = new THREE.Mesh(ringGeo, ringMat);
+        ring.position.set(0, 0.8, 0);
+        ring.rotation.x = Math.PI / 2;
+        ring.rotation.z = i * 0.5;
+        ring.userData = { speed: 0.002 + i * 0.001, axis: 'y' };
+        scene.add(ring);
+    }
+
+    /* ---- Rejilla de datos ---- */
+    const gridHelper = new THREE.GridHelper(8, 30, 0x00c8ff, 0x0a1a3a);
+    gridHelper.position.y = -2.2;
+    scene.add(gridHelper);
+
+    const gridLineMat = new THREE.LineBasicMaterial({ color: 0x00c8ff, transparent: true, opacity: 0.15 });
+    for (let z = -4; z <= 4; z += 1) {
+        const points = [new THREE.Vector3(-4, -2.2, z), new THREE.Vector3(4, -2.2, z)];
+        const lineGeo = new THREE.BufferGeometry().setFromPoints(points);
+        scene.add(new THREE.Line(lineGeo, gridLineMat));
+    }
+    for (let x = -4; x <= 4; x += 1) {
+        const points = [new THREE.Vector3(x, -2.2, -4), new THREE.Vector3(x, -2.2, 4)];
+        const lineGeo = new THREE.BufferGeometry().setFromPoints(points);
+        scene.add(new THREE.Line(lineGeo, gridLineMat));
+    }
+
+    /* ---- Partículas ascendentes ---- */
+    const particleCount = 600;
+    const particleGeo = new THREE.BufferGeometry();
+    const positions = new Float32Array(particleCount * 3);
+    const velocities = new Float32Array(particleCount);
+
+    for (let i = 0; i < particleCount; i++) {
+        positions[i * 3] = (Math.random() - 0.5) * 8;
+        positions[i * 3 + 1] = -2 + Math.random() * 6;
+        positions[i * 3 + 2] = (Math.random() - 0.5) * 6;
+        velocities[i] = 0.005 + Math.random() * 0.02;
+    }
+    particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+    const particleMat = new THREE.PointsMaterial({
+        color: 0x00c8ff,
+        size: 0.06,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+        transparent: true,
+        opacity: 0.7,
+    });
+    const particles = new THREE.Points(particleGeo, particleMat);
+    scene.add(particles);
+
+    /* ---- Fragmentos geométricos flotantes ---- */
+    const fragments = [];
+    const fragGeo = new THREE.OctahedronGeometry(0.08, 0);
+    const fragMat = new THREE.MeshStandardMaterial({ color: 0x00c8ff, roughness: 0.2, metalness: 0.8, emissive: new THREE.Color(0x001122) });
+    for (let i = 0; i < 30; i++) {
+        const frag = new THREE.Mesh(fragGeo, fragMat.clone());
+        frag.position.set(
+            (Math.random() - 0.5) * 7,
+            (Math.random() - 0.5) * 5 + 1.5,
+            (Math.random() - 0.5) * 5
+        );
+        frag.userData = {
+            rotX: (Math.random() - 0.5) * 0.02,
+            rotY: (Math.random() - 0.5) * 0.02,
+            floatAmp: 0.15 + Math.random() * 0.3,
+            floatFreq: 0.5 + Math.random() * 1,
+            phase: Math.random() * Math.PI * 2,
+            baseY: frag.position.y
+        };
+        scene.add(frag);
+        fragments.push(frag);
+    }
+
+    let mouseX = 0, mouseY = 0;
+    document.addEventListener('mousemove', (e) => {
+        mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+        mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+    });
+
+    window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    function updateThemeColors() {
+        const style = getComputedStyle(document.documentElement);
+        const primaryHex = style.getPropertyValue('--code').trim() || '#00c8ff';
+        coreMat.color.set(primaryHex);
+        innerSphere.material.color.set(primaryHex);
+        particleMat.color.set(primaryHex);
+        gridLineMat.color.set(primaryHex);
+        fragMat.color.set(primaryHex);
+        mainLight.color.set(primaryHex);
+    }
+    document.getElementById('themeToggle').addEventListener('click', () => {
+        setTimeout(updateThemeColors, 50);
+    });
+
+    const clock = new THREE.Clock();
+    function animate() {
+        requestAnimationFrame(animate);
+        const t = clock.getElapsedTime();
+
+        core.rotation.y += 0.003;
+        core.rotation.x = Math.sin(t * 0.2) * 0.05;
+        innerSphere.rotation.y += 0.005;
+
+        scene.children.forEach(child => {
+            if (child.userData && child.userData.speed) {
+                child.rotation[child.userData.axis] += child.userData.speed;
+            }
+        });
+
+        const posArray = particles.geometry.attributes.position.array;
+        for (let i = 0; i < particleCount; i++) {
+            posArray[i * 3 + 1] += velocities[i];
+            if (posArray[i * 3 + 1] > 4) {
+                posArray[i * 3 + 1] = -2;
+            }
+        }
+        particles.geometry.attributes.position.needsUpdate = true;
+
+        fragments.forEach(frag => {
+            frag.rotation.x += frag.userData.rotX;
+            frag.rotation.y += frag.userData.rotY;
+            frag.position.y = frag.userData.baseY +
+                Math.sin(t * frag.userData.floatFreq + frag.userData.phase) * frag.userData.floatAmp;
+        });
+
+        camera.position.x += (mouseX * 0.5 - camera.position.x) * 0.03;
+        camera.position.y += (2.0 - mouseY * 0.3 - camera.position.y) * 0.03;
+        camera.lookAt(0, 0.8, 0);
+
+        renderer.render(scene, camera);
+    }
+    animate();
+}
+
+/* ==========================================
+   THREE.JS — CODE DIVIDER (rejilla minimalista)
+========================================== */
+function initCodeCanvas() {
+    if (!window.THREE) return;
+    const canvas = $('#code-canvas');
+    if (!canvas) return;
+
+    const W = canvas.offsetWidth, H = canvas.offsetHeight;
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setSize(W, H);
+
+    const scene  = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(50, W / H, 0.1, 50);
+    camera.position.set(0, 0, 6);
+
+    scene.add(new THREE.AmbientLight(0x1a2b4c, 0.5));
+    const light = new THREE.PointLight(0x00c8ff, 2, 20);
+    light.position.set(1, 2, 4);
+    scene.add(light);
+
+    const group = new THREE.Group();
+    const gridSize = 20;
+    const spacing = 0.4;
+    const geo = new THREE.SphereGeometry(0.05, 4, 4);
+    const mat = new THREE.MeshBasicMaterial({ color: 0x00c8ff });
+    for (let i = -gridSize/2; i < gridSize/2; i++) {
+        for (let j = -gridSize/2; j < gridSize/2; j++) {
+            const sphere = new THREE.Mesh(geo, mat);
+            sphere.position.set(i * spacing, j * spacing, 0);
+            group.add(sphere);
+        }
+    }
+    scene.add(group);
+
+    const clock = new THREE.Clock();
+    function animate() {
+        requestAnimationFrame(animate);
+        group.rotation.z += 0.001;
+        group.rotation.x = Math.sin(clock.getElapsedTime() * 0.3) * 0.1;
+        renderer.render(scene, camera);
+    }
+    animate();
+}
+
+/* ==========================================
+   CONTACT CANVAS (starfield cian)
+========================================== */
+function initContactCanvas() {
+    const canvas = document.getElementById('contact-canvas');
+    if (!canvas || !window.THREE) return;
+
+    const section = canvas.parentElement;
+    const W = section.offsetWidth, H = section.offsetHeight || 400;
+
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false });
+    renderer.setSize(W, H);
+
+    const scene  = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(60, W / H, 0.1, 100);
+    camera.position.z = 5;
+
+    const ptGeo = new THREE.BufferGeometry();
+    const pts   = new Float32Array(250 * 3);
+    for (let i = 0; i < pts.length; i++) pts[i] = (Math.random() - 0.5) * 18;
+    ptGeo.setAttribute('position', new THREE.BufferAttribute(pts, 3));
+    const ptMat = new THREE.PointsMaterial({ color: 0x00c8ff, size: 0.05, transparent: true, opacity: 0.5 });
+    scene.add(new THREE.Points(ptGeo, ptMat));
+
+    const clock = new THREE.Clock();
+    function animate() {
+        requestAnimationFrame(animate);
+        const t = clock.getElapsedTime();
+        scene.rotation.y = t * 0.03;
+        scene.rotation.x = Math.sin(t * 0.02) * 0.15;
+        renderer.render(scene, camera);
+    }
+    animate();
+}
+
+/* ==========================================
+   INIT ALL
+========================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    initNav();
+    initTheme();
+    initTyped();
+    initFilters();
+    initPDF();
+    initReveal();
+
+    setTimeout(() => {
+        initHeroScene();
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (!e.isIntersecting) return;
+                if (e.target.id === 'code-canvas') initCodeCanvas();
+                if (e.target.id === 'contact-canvas') initContactCanvas();
+                observer.unobserve(e.target);
+            });
+        }, { threshold: 0.1 });
+
+        ['code-canvas', 'contact-canvas'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) observer.observe(el);
+        });
+    }, 100);
+});
