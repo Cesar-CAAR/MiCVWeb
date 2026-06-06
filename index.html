@@ -1,1 +1,243 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>César Andres Alvarez Romero | Portfolio Profesional</title><link rel="stylesheet" href="styles.css"></head><body><div class="container"><header class="header-card"><div class="header-content"><div class="profile-container"><img src="assets/img/descarga.jpg" alt="Foto de Perfil" class="profile-image"></div><div class="profile-info"><h1>César Andres Alvarez Romero</h1><h2 class="subtitle">Full Stack Developer • Mobile Developer</h2><p class="header-description"> Angular • .NET • ASP.NET Core • MAUI • PostgreSQL • SQL Server </p></div><div class="action-buttons"><button id="downloadPdfBtn" class="pdf-btn"> 📄 Descargar PDF </button><button id="themeToggle" class="theme-btn"><span id="themeIcon">🌙</span><span id="themeText">Modo Oscuro</span></button></div></div></header><div class="layout"><aside><section class="card reveal"><h3 class="section-title">Información</h3><ul class="info-list"><li>📍 Vícam, Guaymas, Sonora, México</li><li>🎓 Universidad Tecnológica del Sur de Sonora</li></ul></section><section class="card reveal"><h3 class="section-title">Habilidades</h3><div class="skill-group"><h4>Frontend</h4><div class="badge-container"><span class="badge">Angular</span><span class="badge">TypeScript</span><span class="badge">JavaScript</span><span class="badge">HTML5</span><span class="badge">CSS3</span></div></div><div class="skill-group"><h4>Backend</h4><div class="badge-container"><span class="badge">.NET</span><span class="badge">ASP.NET Core</span><span class="badge">C#</span><span class="badge">REST API</span></div></div><div class="skill-group"><h4>Mobile</h4><div class="badge-container"><span class="badge">.NET MAUI</span><span class="badge">Android</span></div></div><div class="skill-group"><h4>Bases de Datos</h4><div class="badge-container"><span class="badge">PostgreSQL</span><span class="badge">SQL Server</span></div></div><div class="skill-group"><h4>DevOps y Linux</h4><div class="badge-container"><span class="badge">Ubuntu Server</span><span class="badge">SSH</span><span class="badge">Git</span><span class="badge">GitHub</span></div></div><div class="skill-group"><h4>Gestión</h4><div class="badge-container"><span class="badge">Scrum</span><span class="badge">Jira</span><span class="badge">Moqups</span></div></div><div class="skill-group"><h4>IoT</h4><div class="badge-container"><span class="badge">Arduino</span></div></div></section></aside><main><section class="card reveal"><h3 class="section-title">Perfil Profesional</h3><p> Desarrollador Full-Stack especializado en aplicaciones web, móviles y soluciones IoT utilizando Angular, .NET, ASP.NET Core y .NET MAUI. </p><br><p> Experiencia en arquitecturas desacopladas y desarrollo de APIs REST. Conocimientos aplicados en bases de datos y trabajo colaborativo bajo el marco de trabajo Scrum. </p><br><p> Orientado a la calidad del software, buenas prácticas de desarrollo y mejora continua. </p></section><section class="card reveal"><h3 class="section-title">Experiencia Profesional</h3><div class="timeline"><div class="timeline-item"><h4>Arcano Pizza | Sistema Integral de Gestión Web</h4><span class="timeline-date"> Desarrollador Full-Stack <br> Enero 2026 – Abril 2026 </span><ul><li>Diseño e implementación de arquitectura cliente-servidor desacoplada utilizando Angular y .NET.</li><li>Desarrollo de interfaces dinámicas y responsivas mediante Angular.</li><li>Implementación del sistema visual "Midnight Spell".</li><li>Desarrollo de servicios backend en .NET para la lógica de negocio.</li><li>Troubleshooting, debugging y documentación técnica para resolución de incidencias.</li></ul></div><div class="timeline-item"><h4>Scrum Master y Líder Técnico</h4><span class="timeline-date">Proyectos Universitarios</span><p> Coordinación de equipos de desarrollo utilizando Scrum, Jira y GitHub para la planificación y seguimiento de proyectos. </p></div></div></section><section class="card reveal"><h3 class="section-title">Proyectos Destacados</h3><div class="filter-container"><button class="filter-btn active" data-filter="all">Todos</button><button class="filter-btn" data-filter="web">Web</button><button class="filter-btn" data-filter="iot">IoT</button></div><div class="projects-grid"><article class="project-card" data-category="web"><h4>Arcano Pizza</h4><p>Sistema integral de gestión web desarrollado con Angular y .NET bajo arquitectura cliente-servidor desacoplada.</p></article><article class="project-card" data-category="web"><h4>Sistema de Administración de Usuarios</h4><p>Gestión de usuarios, roles y permisos utilizando Angular y ASP.NET Core.</p></article><article class="project-card" data-category="iot"><h4>Integración IoT con Arduino</h4><p>Comunicación entre dispositivos físicos y aplicaciones móviles para monitoreo y automatización.</p></article><article class="project-card" data-category="web"><h4>API + Aplicación MAUI</h4><p>Desarrollo de backend en .NET conectado a aplicaciones móviles multiplataforma.</p></article></div></section><section class="card reveal"><h3 class="section-title">Educación</h3><div class="timeline"><div class="timeline-item"><h4>Técnico Superior Universitario en Desarrollo de Software Multiplataforma</h4><span class="timeline-date">Universidad Tecnológica del Sur de Sonora</span></div><div class="timeline-item"><h4>Ingeniería en Desarrollo y Gestión de Software</h4><span class="timeline-date">Universidad Tecnológica del Sur de Sonora</span></div></div></section><section class="card reveal"><h3 class="section-title">Contacto</h3><ul class="info-list"><li><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail" width="18"><a id="emailLink"></a></li><li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="18"><a id="githubLink" target="_blank"></a></li></ul></section></main></div><footer class="footer"><p>© 2026 César Andres Alvarez Romero</p><p>Versión: <span id="version">1.0.0</span></p></footer></div><script src="config.js"></script><script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>César Andres Alvarez Romero | Portfolio Profesional</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <header class="header-card">
+            <div class="header-content">
+
+                <div class="profile-container">
+                    <img src="assets/img/descarga.jpg" alt="Foto de Perfil" class="profile-image">
+                </div>
+
+                <div class="profile-info">
+                    <h1>César Andres Alvarez Romero</h1>
+                    <h2 class="subtitle">Full Stack Developer • Mobile Developer</h2>
+                    <p class="header-description">
+                        Angular • .NET • ASP.NET Core • MAUI • PostgreSQL • SQL Server
+                    </p>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="downloadPdfBtn" class="pdf-btn">
+                        📄 Descargar PDF
+                    </button>
+
+                    <button id="themeToggle" class="theme-btn">
+                        <span id="themeIcon">🌙</span>
+                        <span id="themeText">Modo Oscuro</span>
+                    </button>
+                </div>
+
+            </div>
+        </header>
+
+        <div class="layout">
+
+            <aside>
+                <section class="card reveal">
+                    <h3 class="section-title">Información</h3>
+                    <ul class="info-list">
+                        <li>📍 Vícam, Guaymas, Sonora, México</li>
+                        <li>🎓 Universidad Tecnológica del Sur de Sonora</li>
+                    </ul>
+                </section>
+
+                <section class="card reveal">
+                    <h3 class="section-title">Habilidades</h3>
+
+                    <div class="skill-group">
+                        <h4>Frontend</h4>
+                        <div class="badge-container">
+                            <span class="badge">Angular</span>
+                            <span class="badge">TypeScript</span>
+                            <span class="badge">JavaScript</span>
+                            <span class="badge">HTML5</span>
+                            <span class="badge">CSS3</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h4>Backend</h4>
+                        <div class="badge-container">
+                            <span class="badge">.NET</span>
+                            <span class="badge">ASP.NET Core</span>
+                            <span class="badge">C#</span>
+                            <span class="badge">REST API</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h4>Mobile</h4>
+                        <div class="badge-container">
+                            <span class="badge">.NET MAUI</span>
+                            <span class="badge">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h4>Bases de Datos</h4>
+                        <div class="badge-container">
+                            <span class="badge">PostgreSQL</span>
+                            <span class="badge">SQL Server</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h4>DevOps y Linux</h4>
+                        <div class="badge-container">
+                            <span class="badge">Ubuntu Server</span>
+                            <span class="badge">SSH</span>
+                            <span class="badge">Git</span>
+                            <span class="badge">GitHub</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h4>Gestión</h4>
+                        <div class="badge-container">
+                            <span class="badge">Scrum</span>
+                            <span class="badge">Jira</span>
+                            <span class="badge">Moqups</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h4>IoT</h4>
+                        <div class="badge-container">
+                            <span class="badge">Arduino</span>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+
+            <main>
+                <section class="card reveal">
+                    <h3 class="section-title">Perfil Profesional</h3>
+                    <p>
+                        Desarrollador Full-Stack especializado en aplicaciones web,
+                        móviles y soluciones IoT utilizando Angular, .NET,
+                        ASP.NET Core y .NET MAUI.
+                    </p>
+                    <br>
+                    <p>
+                        Experiencia en arquitecturas desacopladas y desarrollo de APIs REST. Conocimientos aplicados en
+                        bases de datos y trabajo colaborativo bajo el marco de trabajo Scrum.
+                    </p>
+                    <br>
+                    <p>
+                        Orientado a la calidad del software,
+                        buenas prácticas de desarrollo y mejora continua.
+                    </p>
+                </section>
+
+                <section class="card reveal">
+                    <h3 class="section-title">Experiencia Profesional</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4>Arcano Pizza | Sistema Integral de Gestión Web</h4>
+                            <span class="timeline-date">
+                                Desarrollador Full-Stack
+                                <br>
+                                Enero 2026 – Abril 2026
+                            </span>
+                            <ul>
+                                <li>Diseño e implementación de arquitectura cliente-servidor desacoplada utilizando Angular y .NET.</li>
+                                <li>Desarrollo de interfaces dinámicas y responsivas mediante Angular.</li>
+                                <li>Implementación del sistema visual "Midnight Spell".</li>
+                                <li>Desarrollo de servicios backend en .NET para la lógica de negocio.</li>
+                                <li>Troubleshooting, debugging y documentación técnica para resolución de incidencias.</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <h4>Scrum Master y Líder Técnico</h4>
+                            <span class="timeline-date">Proyectos Universitarios</span>
+                            <p>
+                                Coordinación de equipos de desarrollo utilizando Scrum,
+                                Jira y GitHub para la planificación y seguimiento de proyectos.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card reveal">
+                    <h3 class="section-title">Proyectos Destacados</h3>
+                    <div class="filter-container">
+                        <button class="filter-btn active" data-filter="all">Todos</button>
+                        <button class="filter-btn" data-filter="web">Web</button>
+                        <button class="filter-btn" data-filter="iot">IoT</button>
+                    </div>
+
+                    <div class="projects-grid">
+                        <article class="project-card" data-category="web">
+                            <h4>Arcano Pizza</h4>
+                            <p>Sistema integral de gestión web desarrollado con Angular y .NET bajo arquitectura cliente-servidor desacoplada.</p>
+                        </article>
+
+                        <article class="project-card" data-category="web">
+                            <h4>Sistema de Administración de Usuarios</h4>
+                            <p>Gestión de usuarios, roles y permisos utilizando Angular y ASP.NET Core.</p>
+                        </article>
+
+                        <article class="project-card" data-category="iot">
+                            <h4>Integración IoT con Arduino</h4>
+                            <p>Comunicación entre dispositivos físicos y aplicaciones móviles para monitoreo y automatización.</p>
+                        </article>
+
+                        <article class="project-card" data-category="web">
+                            <h4>API + Aplicación MAUI</h4>
+                            <p>Desarrollo de backend en .NET conectado a aplicaciones móviles multiplataforma.</p>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="card reveal">
+                    <h3 class="section-title">Educación</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4>Técnico Superior Universitario en Desarrollo de Software Multiplataforma</h4>
+                            <span class="timeline-date">Universidad Tecnológica del Sur de Sonora</span>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Ingeniería en Desarrollo y Gestión de Software</h4>
+                            <span class="timeline-date">Universidad Tecnológica del Sur de Sonora</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card reveal">
+                    <h3 class="section-title">Contacto</h3>
+                    <ul class="info-list">
+                        <li>
+                            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail" width="18">
+                            <a id="emailLink"></a>
+                        </li>
+                        <li>
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="18">
+                            <a id="githubLink" target="_blank"></a>
+                        </li>
+                    </ul>
+                </section>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <p>© 2026 César Andres Alvarez Romero</p>
+            <p>Versión: <span id="version">1.0.0</span></p>
+        </footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
