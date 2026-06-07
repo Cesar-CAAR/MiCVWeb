@@ -14,7 +14,7 @@ window.APP_CONFIG = {
     email:     "cesar.andres5242@gmail.com",
     github:    "https://github.com/Cesar-CAAR",
 
-    version:   "2.0.5",
+    version:   "2.0.6",
 
     universidad: "Universidad Tecnológica del Sur de Sonora",
     carrera:     "Ingeniería en Desarrollo y Gestión de Software",

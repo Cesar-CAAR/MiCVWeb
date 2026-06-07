@@ -27,10 +27,6 @@
     --font-display: 'Space Grotesk', sans-serif;
     --font-mono: 'Space Mono', monospace;
     --font-body: 'Inter', sans-serif;
-
-    /* Unidades dinámicas reales (se actualizan con JS) */
-    --vh: 1vh;
-    --vw: 1vw;
 }
 
 /* ==========================================
@@ -59,7 +55,7 @@
 }
 
 /* ==========================================
-   RESET & BASE (con safe areas)
+   RESET & BASE (safe areas)
 ========================================== */
 *, *::before, *::after {
     margin: 0; padding: 0;
@@ -84,7 +80,7 @@ body {
 }
 
 /* ==========================================
-   HERO CANVAS (fijo, usa viewport real)
+   HERO CANVAS (fijo, cubre todo)
 ========================================== */
 #hero-canvas {
     position: fixed;
@@ -171,12 +167,13 @@ body {
 .nav-pdf-btn:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 0 25px var(--primary-glow); }
 
 /* ==========================================
-   HERO (usa vh dinámico)
+   HERO (altura dinámica real con dvh)
 ========================================== */
 .hero {
     position: relative;
     z-index: 1;
-    min-height: calc(var(--vh, 1vh) * 100);
+    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
     padding: 120px 40px 80px;
@@ -221,8 +218,6 @@ body {
     margin-bottom: 40px;
     line-height: 1.7;
 }
-
-/* Typed words */
 .typed-area {
     display: inline-block;
     position: relative;
@@ -645,10 +640,11 @@ body {
 .edu-uni { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); }
 
 /* ==========================================
-   CONTACTO (vh dinámico)
+   CONTACTO (altura dinámica real con dvh)
 ========================================== */
 .section-contact {
-    min-height: calc(var(--vh, 1vh) * 60);
+    min-height: 60vh;
+    min-height: 60dvh;
     display: flex;
     align-items: center;
     justify-content: center;

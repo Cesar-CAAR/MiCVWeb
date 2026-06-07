@@ -1,7 +1,7 @@
 /* ============================================================
    PORTFOLIO 3D — script.js (Detroit Lobby)
    Núcleo holográfico, rejilla, partículas.
-   Redimensionamiento robusto con unidades dinámicas y safe areas.
+   Redimensionamiento estable (sin eventos de scroll innecesarios).
    ============================================================ */
 
 window.APP_CONFIG = {
@@ -112,18 +112,6 @@ function initPDF() {
         a.click();
         document.body.removeChild(a);
     });
-}
-
-/* ================================================================
-   ACTUALIZACIÓN DE UNIDADES DINÁMICAS (vw, vh reales)
-   y redimensionamiento del canvas 3D
-   Soporta cambios de orientación, zoom y barra de direcciones.
-=============================================================== */
-function updateViewportUnits() {
-    const vh = window.innerHeight * 0.01;
-    const vw = window.innerWidth * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-    document.documentElement.style.setProperty('--vw', `${vw}px`);
 }
 
 /* ==========================================
@@ -240,7 +228,7 @@ function initHeroScene() {
         mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
     });
 
-    /* ---- Función para ajustar tamaño del canvas y cámara ---- */
+    /* ---- Función de redimensionamiento del canvas (sin afectar el layout) ---- */
     function resizeScene() {
         const width = window.visualViewport ? window.visualViewport.width : window.innerWidth;
         const height = window.visualViewport ? window.visualViewport.height : window.innerHeight;
@@ -251,24 +239,12 @@ function initHeroScene() {
 
     // Inicializar tamaño
     resizeScene();
-    updateViewportUnits();
 
-    // Escuchar cambios de tamaño (incluye cambios de orientación y barra de direcciones)
+    // Solo cuando cambie el viewport real (cambio de orientación, apertura/cierre de teclado, etc.)
     if (window.visualViewport) {
-        window.visualViewport.addEventListener('resize', () => {
-            resizeScene();
-            updateViewportUnits();
-        });
-        window.visualViewport.addEventListener('scroll', () => {
-            // Al hacer zoom o desplazarse, puede cambiar el viewport visual
-            resizeScene();
-            updateViewportUnits();
-        });
+        window.visualViewport.addEventListener('resize', resizeScene);
     } else {
-        window.addEventListener('resize', () => {
-            resizeScene();
-            updateViewportUnits();
-        });
+        window.addEventListener('resize', resizeScene);
     }
 
     /* ---- Actualizar colores con el tema ---- */
