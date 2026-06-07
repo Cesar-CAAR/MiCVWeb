@@ -8,7 +8,7 @@ window.APP_CONFIG = {
     nombre:    "César Andres Alvarez Romero",
     email:     "cesar.andres5242@gmail.com",
     github:    "https://github.com/Cesar-CAAR",
-    version:   "2.0.8",
+    version:   "2.0.9",
 };
 
 const $ = (sel) => document.querySelector(sel);
@@ -228,29 +228,27 @@ function initHeroScene() {
         mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
     });
 
-    /* ---- Función de redimensionamiento del canvas (Estabilizada contra barras móviles) ---- */
+    /* ---- Función de redimensionamiento (Blindaje móvil estricto) ---- */
     let lastWidth = window.innerWidth;
-    let lastHeight = window.innerHeight;
 
     function resizeScene() {
         const width = window.innerWidth;
         const height = window.innerHeight;
 
-        // Calculamos cuánto cambió la altura
-        const heightDiff = Math.abs(height - lastHeight);
+        // Detectar si es un dispositivo móvil/tablet basándonos en el ancho
+        const isMobileDevice = width <= 900;
 
-        // Si el ancho es EXACTAMENTE el mismo y la diferencia de altura es menor a 150px 
-        // (lo típico que mide una barra de direcciones en el celular), ignoramos el evento.
-        // Esto evita el "salto forzoso" al hacer scroll.
-        if (width === lastWidth && heightDiff > 0 && heightDiff < 150) {
+        // Si estamos en móvil y el ancho ES EXACTAMENTE EL MISMO, 
+        // cancelamos la ejecución. El alto no nos importa porque solo 
+        // cambia por la barra de navegación.
+        if (isMobileDevice && width === lastWidth) {
             return; 
         }
 
-        // Actualizamos nuestros registros
+        // Actualizamos el registro del ancho
         lastWidth = width;
-        lastHeight = height;
         
-        // Renderizamos con el nuevo tamaño validado
+        // Ejecutar el redimensionamiento del canvas
         renderer.setSize(width, height);
         camera.aspect = width / height;
         camera.updateProjectionMatrix();

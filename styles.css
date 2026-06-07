@@ -84,14 +84,13 @@ body {
 #hero-canvas {
     position: fixed;
     top: 0; left: 0;
-    width: 100vw; /* Modificado */
-    height: 100vh; /* Modificado */
-    height: 100dvh; /* Modificado: altura dinámica real */
+    width: 100vw;
+    height: 100vh;
+    height: 100svh; /* CAMBIO: dvh por svh */
     z-index: 0;
     pointer-events: none;
     opacity: 0.95;
 }
-
 /* ==========================================
    NAV
 ========================================== */
@@ -173,7 +172,7 @@ body {
     position: relative;
     z-index: 1;
     min-height: 100vh;
-    min-height: 100dvh;
+    min-height: 100svh; /* CAMBIO: dvh por svh */
     display: flex;
     align-items: center;
     padding: 120px 40px 80px;
@@ -644,7 +643,7 @@ body {
 ========================================== */
 .section-contact {
     min-height: 60vh;
-    min-height: 60dvh;
+    min-height: 60svh; /* CAMBIO: dvh por svh */
     display: flex;
     align-items: center;
     justify-content: center;
