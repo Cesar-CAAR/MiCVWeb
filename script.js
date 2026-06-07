@@ -1,7 +1,7 @@
 /* ============================================================
    PORTFOLIO 3D — script.js (Detroit Lobby)
    Escena: núcleo holográfico, rejilla de datos, partículas flotantes.
-   Corrección de resize para móviles (evita saltos por barra de direcciones)
+   Redimensionamiento optimizado para móviles (evita saltos por barra de direcciones)
    ============================================================ */
 
 /* ==========================================
@@ -259,17 +259,15 @@ function initHeroScene() {
     let currentWidth = window.innerWidth;
 
     function handleResize() {
-        // Usamos visualViewport si está disponible (móviles modernos)
         const viewport = window.visualViewport;
         if (viewport) {
             const newWidth = viewport.width;
-            if (Math.abs(newWidth - currentWidth) < 1) return; // solo cambios de ancho
+            if (Math.abs(newWidth - currentWidth) < 1) return;
             currentWidth = newWidth;
             camera.aspect = newWidth / viewport.height;
             camera.updateProjectionMatrix();
             renderer.setSize(newWidth, viewport.height);
         } else {
-            // Fallback para navegadores sin visualViewport
             const newWidth = window.innerWidth;
             if (Math.abs(newWidth - currentWidth) < 1) return;
             currentWidth = newWidth;
