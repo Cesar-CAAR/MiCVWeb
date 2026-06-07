@@ -1,7 +1,7 @@
 /* ============================================================
    PORTFOLIO 3D — script.js (Detroit Lobby)
    Núcleo holográfico, rejilla, partículas.
-   Redimensionamiento estable (sin eventos de scroll innecesarios).
+   Redimensionamiento estable (Móviles solucionado).
    ============================================================ */
 
 window.APP_CONFIG = {
@@ -228,10 +228,13 @@ function initHeroScene() {
         mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
     });
 
-    /* ---- Función de redimensionamiento del canvas (sin afectar el layout) ---- */
+    /* ---- Función de redimensionamiento del canvas (Estabilizada para móviles) ---- */
     function resizeScene() {
-        const width = window.visualViewport ? window.visualViewport.width : window.innerWidth;
-        const height = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+        // Utilizamos el Layout Viewport (innerWidth/innerHeight) en lugar del visualViewport.
+        // Esto evita que el canvas colapse al hacer pinch-to-zoom.
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        
         renderer.setSize(width, height);
         camera.aspect = width / height;
         camera.updateProjectionMatrix();
@@ -240,12 +243,9 @@ function initHeroScene() {
     // Inicializar tamaño
     resizeScene();
 
-    // Solo cuando cambie el viewport real (cambio de orientación, apertura/cierre de teclado, etc.)
-    if (window.visualViewport) {
-        window.visualViewport.addEventListener('resize', resizeScene);
-    } else {
-        window.addEventListener('resize', resizeScene);
-    }
+    // Escuchar el evento resize estándar. Ignoramos visualViewport para evitar "layout trashing" 
+    // y recálculos erróneos de escalado durante el zoom.
+    window.addEventListener('resize', resizeScene);
 
     /* ---- Actualizar colores con el tema ---- */
     function updateThemeColors() {
