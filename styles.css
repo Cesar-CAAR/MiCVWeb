@@ -55,13 +55,16 @@
 }
 
 /* ==========================================
-   RESET
+   RESET & BASE
 ========================================== */
 *, *::before, *::after {
     margin: 0; padding: 0;
     box-sizing: border-box;
 }
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+    touch-action: manipulation; /* evita zoom por doble toque */
+}
 body {
     font-family: var(--font-body);
     background: var(--bg);
@@ -84,7 +87,7 @@ body {
 }
 
 /* ==========================================
-   NAV (sin logo CAAR, solo enlaces)
+   NAV (centrado, sin logo)
 ========================================== */
 .nav {
     position: fixed;
@@ -92,7 +95,7 @@ body {
     z-index: 100;
     display: flex;
     align-items: center;
-    justify-content: flex-end;   /* Mantiene los botones a la derecha */
+    justify-content: flex-end;   /* botones a la derecha */
     padding: 20px 40px;
     background: transparent;
     transition: background .4s ease, backdrop-filter .4s ease, padding .3s ease;
@@ -115,7 +118,7 @@ body {
     display: flex;
     gap: 32px;
     list-style: none;
-    margin: 0;        /* Quita cualquier margen automático */
+    margin: 0;
 }
 .nav-links a {
     font-family: var(--font-mono);
@@ -127,12 +130,7 @@ body {
 }
 .nav-links a:hover { color: var(--primary); }
 
-.nav-actions {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    z-index: 2;       /* Asegura que quede sobre la lista si se solapan */
-}
+.nav-actions { display: flex; gap: 12px; align-items: center; z-index: 2; }
 
 .theme-btn {
     background: var(--glass);
@@ -164,7 +162,7 @@ body {
 .nav-pdf-btn:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 0 25px var(--primary-glow); }
 
 /* ==========================================
-   HERO (nombre completo en una línea)
+   HERO (nombre completo horizontal)
 ========================================== */
 .hero {
     position: relative;
@@ -391,7 +389,7 @@ body {
 }
 
 /* ==========================================
-   PROFILE (texto actualizado)
+   PROFILE
 ========================================== */
 .profile-grid {
     display: grid;
@@ -578,10 +576,8 @@ body {
     background: rgba(0,200,255,0.1);
     display: flex; align-items: center; justify-content: center;
     font-family: var(--font-display);
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--primary);
     font-size: 0;
+    color: var(--primary);
 }
 .cube-face.front  { transform: translateZ(20px); }
 .cube-face.back   { transform: rotateY(180deg) translateZ(20px); }
@@ -590,10 +586,7 @@ body {
 .cube-face.top    { transform: rotateX(90deg) translateZ(20px); }
 .cube-face.bottom { transform: rotateX(-90deg) translateZ(20px); }
 
-.tl-content {
-    padding: 28px;
-    border-radius: var(--radius);
-}
+.tl-content { padding: 28px; border-radius: var(--radius); }
 .tl-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
 .tl-company { font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); letter-spacing: 0.08em; text-transform: uppercase; }
 .tl-date { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); }
@@ -704,7 +697,20 @@ body {
     overflow: hidden;
     background: var(--bg);
 }
-.contact-inner { text-align: center; position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
+.contact-bg-canvas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+.contact-inner {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+}
 .contact-title {
     font-family: var(--font-display);
     font-size: clamp(2.5rem, 6vw, 5rem);

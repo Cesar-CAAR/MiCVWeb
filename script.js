@@ -1,6 +1,7 @@
 /* ============================================================
    PORTFOLIO 3D — script.js (Detroit Lobby)
    Escena: núcleo holográfico, rejilla de datos, partículas flotantes.
+   Corrección de resize para móviles (evita saltos por barra de direcciones)
    ============================================================ */
 
 /* ==========================================
@@ -122,6 +123,7 @@ function initPDF() {
 /* ==========================================
    THREE.JS — HERO SCENE (Detroit Lobby)
    Núcleo holográfico central + rejilla + partículas
+   Redimensionamiento optimizado para móviles
 ========================================== */
 function initHeroScene() {
     if (!window.THREE) return;
@@ -243,18 +245,47 @@ function initHeroScene() {
         fragments.push(frag);
     }
 
+    /* ---- Movimiento del ratón (parallax) ---- */
     let mouseX = 0, mouseY = 0;
     document.addEventListener('mousemove', (e) => {
         mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
         mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
     });
 
-    window.addEventListener('resize', () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-    });
+    /* ================================================================
+       REDIMENSIONAMIENTO (solo cuando cambia el ancho real)
+       Así se evitan saltos al mostrar/ocultar la barra de direcciones
+    ================================================================ */
+    let currentWidth = window.innerWidth;
 
+    function handleResize() {
+        // Usamos visualViewport si está disponible (móviles modernos)
+        const viewport = window.visualViewport;
+        if (viewport) {
+            const newWidth = viewport.width;
+            if (Math.abs(newWidth - currentWidth) < 1) return; // solo cambios de ancho
+            currentWidth = newWidth;
+            camera.aspect = newWidth / viewport.height;
+            camera.updateProjectionMatrix();
+            renderer.setSize(newWidth, viewport.height);
+        } else {
+            // Fallback para navegadores sin visualViewport
+            const newWidth = window.innerWidth;
+            if (Math.abs(newWidth - currentWidth) < 1) return;
+            currentWidth = newWidth;
+            camera.aspect = newWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(newWidth, window.innerHeight);
+        }
+    }
+
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', handleResize);
+    } else {
+        window.addEventListener('resize', handleResize);
+    }
+
+    /* ---- Actualizar colores con el tema ---- */
     function updateThemeColors() {
         const style = getComputedStyle(document.documentElement);
         const primaryHex = style.getPropertyValue('--code').trim() || '#00c8ff';
@@ -269,6 +300,7 @@ function initHeroScene() {
         setTimeout(updateThemeColors, 50);
     });
 
+    /* ---- Animación ---- */
     const clock = new THREE.Clock();
     function animate() {
         requestAnimationFrame(animate);
