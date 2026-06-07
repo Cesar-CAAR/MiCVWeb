@@ -8,7 +8,7 @@ window.APP_CONFIG = {
     nombre:    "César Andres Alvarez Romero",
     email:     "cesar.andres5242@gmail.com",
     github:    "https://github.com/Cesar-CAAR",
-    version:   "2.0",
+    version:   "2.0.8",
 };
 
 const $ = (sel) => document.querySelector(sel);
@@ -228,13 +228,29 @@ function initHeroScene() {
         mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
     });
 
-    /* ---- Función de redimensionamiento del canvas (Estabilizada para móviles) ---- */
+    /* ---- Función de redimensionamiento del canvas (Estabilizada contra barras móviles) ---- */
+    let lastWidth = window.innerWidth;
+    let lastHeight = window.innerHeight;
+
     function resizeScene() {
-        // Utilizamos el Layout Viewport (innerWidth/innerHeight) en lugar del visualViewport.
-        // Esto evita que el canvas colapse al hacer pinch-to-zoom.
         const width = window.innerWidth;
         const height = window.innerHeight;
+
+        // Calculamos cuánto cambió la altura
+        const heightDiff = Math.abs(height - lastHeight);
+
+        // Si el ancho es EXACTAMENTE el mismo y la diferencia de altura es menor a 150px 
+        // (lo típico que mide una barra de direcciones en el celular), ignoramos el evento.
+        // Esto evita el "salto forzoso" al hacer scroll.
+        if (width === lastWidth && heightDiff > 0 && heightDiff < 150) {
+            return; 
+        }
+
+        // Actualizamos nuestros registros
+        lastWidth = width;
+        lastHeight = height;
         
+        // Renderizamos con el nuevo tamaño validado
         renderer.setSize(width, height);
         camera.aspect = width / height;
         camera.updateProjectionMatrix();
@@ -243,8 +259,6 @@ function initHeroScene() {
     // Inicializar tamaño
     resizeScene();
 
-    // Escuchar el evento resize estándar. Ignoramos visualViewport para evitar "layout trashing" 
-    // y recálculos erróneos de escalado durante el zoom.
     window.addEventListener('resize', resizeScene);
 
     /* ---- Actualizar colores con el tema ---- */
