@@ -2,6 +2,11 @@
    VARIABLES - DARK (Detroit Lobby)
 ========================================== */
 :root {
+    /* Le decimos al navegador que la base del sitio es oscura */
+    color-scheme: dark;
+    /* Variable dinámica para la barra de navegación al hacer scroll */
+    --nav-scrolled: rgba(5, 10, 20, 0.92);
+
     --bg: #050a14;
     --bg-alt: #0a0f1f;
     --card: rgba(10, 15, 25, 0.6);
@@ -33,25 +38,33 @@
    MODO CLARO
 ========================================== */
 [data-theme="light"] {
-    --bg: #e8ecf5;
-    --bg-alt: #dce3f0;
-    --card: rgba(255, 255, 255, 0.7);
-    --glass: rgba(255, 255, 255, 0.75);
-    --glass-border: rgba(0, 150, 200, 0.4);
+    /* Bloquea el "modo oscuro forzado" de navegadores móviles para evitar el color gris */
+    color-scheme: light;
+    /* Variable para que la barra de navegación también se vuelva clara */
+    --nav-scrolled: rgba(240, 244, 250, 0.92);
+
+    /* Aclaramos los fondos un poco más para que no parezca un tema grisáceo */
+    --bg: #f4f7fb;
+    --bg-alt: #e8ecf5;
+    
+    --card: rgba(255, 255, 255, 0.85);
+    --glass: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(0, 136, 204, 0.3);
     --text: #050a14;
     --text-secondary: #2a3a55;
     --text-dim: #6a7a99;
 
-    --code: #0088cc;
-    --music: #5b4ea0;
-    --design: #0088cc;
-    --primary: #0088cc;
-    --primary-glow: rgba(0, 136, 204, 0.15);
-    --music-glow: rgba(91, 78, 160, 0.1);
-    --design-glow: rgba(0, 136, 204, 0.1);
+    /* Tonos primarios un poco más oscuros para garantizar buen contraste en fondo blanco */
+    --code: #0077b3;
+    --music: #4a3b8c;
+    --design: #0077b3;
+    --primary: #0077b3;
+    --primary-glow: rgba(0, 119, 179, 0.15);
+    --music-glow: rgba(74, 59, 140, 0.1);
+    --design-glow: rgba(0, 119, 179, 0.1);
 
     --border: rgba(0, 136, 204, 0.2);
-    --shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    --shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
 }
 
 /* ==========================================
@@ -64,33 +77,33 @@
 html {
     scroll-behavior: smooth;
     touch-action: manipulation;
-    overflow-x: hidden; /* Añadido: previene scroll horizontal errático */
-    width: 100vw; /* Añadido: asegura la base del documento */
+    overflow-x: hidden; 
+    width: 100vw; 
 }
 body {
     font-family: var(--font-body);
     background: var(--bg);
     color: var(--text);
     line-height: 1.7;
-    overflow-x: hidden; /* Añadido: asegura que no desborde nada lateralmente */
-    max-width: 100vw; /* Modificado: restringe el ancho total */
+    overflow-x: hidden; 
+    max-width: 100vw; 
     transition: background .4s ease, color .4s ease;
-    /* Eliminados los padding con env() para evitar compresión y bordes blancos */
 }
 
 /* ==========================================
-   HERO CANVAS (Ajuste a todo el Viewport real)
+   HERO CANVAS (Ajuste a todo el Viewport real estable)
 ========================================== */
 #hero-canvas {
     position: fixed;
     top: 0; left: 0;
     width: 100vw;
     height: 100vh;
-    height: 100svh; /* CAMBIO: dvh por svh */
+    height: 100svh;
     z-index: 0;
     pointer-events: none;
     opacity: 0.95;
 }
+
 /* ==========================================
    NAV
 ========================================== */
@@ -107,7 +120,8 @@ body {
     transition: background .4s ease, backdrop-filter .4s ease, padding .3s ease;
 }
 .nav.scrolled {
-    background: rgba(5, 10, 20, 0.92);
+    /* CORRECCIÓN: Ahora usa la variable que se adapta al tema claro/oscuro */
+    background: var(--nav-scrolled);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     padding: 14px 40px;
@@ -172,7 +186,7 @@ body {
     position: relative;
     z-index: 1;
     min-height: 100vh;
-    min-height: 100svh; /* CAMBIO: dvh por svh */
+    min-height: 100svh;
     display: flex;
     align-items: center;
     padding: 120px 40px 80px;
@@ -643,7 +657,7 @@ body {
 ========================================== */
 .section-contact {
     min-height: 60vh;
-    min-height: 60svh; /* CAMBIO: dvh por svh */
+    min-height: 60svh; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -729,13 +743,24 @@ body {
    RESPONSIVE
 ========================================== */
 @media (max-width: 900px) {
-    .profile-grid { grid-template-columns: 1fr; text-align: center; }
-    .profile-card { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+    .profile-grid { 
+        grid-template-columns: 1fr; 
+        text-align: center; 
+    }
+    .profile-card {
+        margin: 0 auto; 
+        justify-self: center; 
+        width: 100%;
+        max-width: 320px; 
+        flex-direction: column;
+        align-items: center;
+    }
     .edu-cards { grid-template-columns: 1fr; }
     .tl-item, .tl-item:nth-child(even) { grid-template-columns: 60px 1fr; }
     .tl-item:nth-child(even) .tl-marker { order: 1; }
     .tl-item:nth-child(even) .tl-content { order: 2; }
 }
+
 @media (max-width: 768px) {
     .nav { padding: 16px 20px; }
     .nav-links { display: none; }
@@ -748,6 +773,7 @@ body {
     .projects-grid { grid-template-columns: 1fr; }
     .section-title { font-size: 1.8rem; }
 }
+
 @media (max-width: 480px) {
     .nav { padding: 14px 16px; }
     .hero { padding: 90px 16px 50px; }
@@ -756,10 +782,13 @@ body {
     .section { padding: 60px 16px; }
     .hero-cta { flex-direction: column; }
     .cta-primary, .cta-secondary { text-align: center; width: 100%; }
+    
+    .profile-img-wrap { width: 120px; height: 120px; margin: 0 auto; } 
     .profile-img { width: 120px; height: 120px; }
     .profile-img-fallback { width: 120px; height: 120px; font-size: 2rem; }
     .profile-ring { inset: -6px; }
     .profile-ring-2 { inset: -14px; }
+    
     .skill-tracks { grid-template-columns: 1fr; }
     .tl-content { padding: 20px; }
     .tl-role { font-size: 1rem; }
