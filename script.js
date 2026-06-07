@@ -228,28 +228,29 @@ function initHeroScene() {
         mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
     });
 
-    /* ---- Función de redimensionamiento (Blindaje móvil estricto) ---- */
-    let lastWidth = window.innerWidth;
+    /* ---- Función de redimensionamiento (Sincronizada con CSS svh) ---- */
+    let lastWidth = 0;
+    let lastHeight = 0;
 
     function resizeScene() {
-        const width = window.innerWidth;
-        const height = window.innerHeight;
+        // Leemos las dimensiones REALES que el CSS le ha asignado al canvas (100vw / 100svh)
+        const width = canvas.clientWidth;
+        const height = canvas.clientHeight;
 
-        // Detectar si es un dispositivo móvil/tablet basándonos en el ancho
-        const isMobileDevice = width <= 900;
+        // Prevenir errores si el canvas aún no tiene tamaño
+        if (width === 0 || height === 0) return;
 
-        // Si estamos en móvil y el ancho ES EXACTAMENTE EL MISMO, 
-        // cancelamos la ejecución. El alto no nos importa porque solo 
-        // cambia por la barra de navegación.
-        if (isMobileDevice && width === lastWidth) {
-            return; 
+        // Si el tamaño del CSS no ha cambiado, ignoramos el evento (adiós saltos)
+        if (width === lastWidth && height === lastHeight) {
+            return;
         }
 
-        // Actualizamos el registro del ancho
         lastWidth = width;
+        lastHeight = height;
         
-        // Ejecutar el redimensionamiento del canvas
-        renderer.setSize(width, height);
+        // El 'false' final es crucial: le dice a Three.js que ajuste la resolución interna,
+        // pero que NO modifique tu CSS.
+        renderer.setSize(width, height, false);
         camera.aspect = width / height;
         camera.updateProjectionMatrix();
     }
